@@ -1,0 +1,931 @@
+fileFormatVersion: 2
+guid: 9225f2e5b4b002643a76c106096de00f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5528987330147599669
+    second: ladrillos_1
+  - first:
+      213: -6711809298985040657
+    second: ladrillos_2
+  - first:
+      213: 6698661777197229310
+    second: ladrillos_3
+  - first:
+      213: -2599975130343045831
+    second: TileMapStage1_3
+  - first:
+      213: 1807514435892387804
+    second: TileMapStage1_4
+  - first:
+      213: -3155565261360866865
+    second: TileMapStage1_5
+  - first:
+      213: -3686209960881463747
+    second: TileMapStage1_6
+  - first:
+      213: 8238413527717234186
+    second: TileMapStage1_7
+  - first:
+      213: -7016178025308664474
+    second: TileMapStage1_8
+  - first:
+      213: 3447746415546009956
+    second: TileMapStage1_9
+  - first:
+      213: 4462483967380983314
+    second: TileMapStage1_10
+  - first:
+      213: 9077362227457749193
+    second: TileMapStage1_11
+  - first:
+      213: -2702282214649566773
+    second: suelo_1
+  - first:
+      213: -1560778072881106173
+    second: viga_1
+  - first:
+      213: -6548898779603822943
+    second: viga_2
+  - first:
+      213: -1034913896008858577
+    second: viga_3
+  - first:
+      213: 2707334541415569742
+    second: TileMapStage1_16
+  - first:
+      213: -6219370157259665656
+    second: TileMapStage1_17
+  - first:
+      213: 3029671243322556406
+    second: TileMapStage1_18
+  - first:
+      213: 480003086404404042
+    second: zocalo_1
+  - first:
+      213: -3472219684027328484
+    second: zocalo_2
+  - first:
+      213: -4592877588815232878
+    second: zocalo_3
+  - first:
+      213: 7164133929403166014
+    second: zocalo_4
+  - first:
+      213: 711013257513195216
+    second: zocalo_5
+  - first:
+      213: 1378078691533660255
+    second: zocalo_6
+  - first:
+      213: 3336583343084232141
+    second: TileMapStage1_25
+  - first:
+      213: 4056437256620632343
+    second: TileMapStage1_26
+  - first:
+      213: 5086431116298687648
+    second: TileMapStage1_27
+  - first:
+      213: 8502818000676715066
+    second: TileMapStage1_28
+  - first:
+      213: 8344714364232387366
+    second: TileMapStage1_29
+  - first:
+      213: -8011181881246581738
+    second: TileMapStage1_30
+  - first:
+      213: -8631879697450020509
+    second: TileMapStage1_31
+  - first:
+      213: -2490281108252972313
+    second: TileMapStage1_32
+  - first:
+      213: 2271819716717566668
+    second: TileMapStage1_33
+  - first:
+      213: -2568334160790421675
+    second: TileMapStage1_34
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ladrillos_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5354515dea8eabc40800000000000000
+      internalID: 5528987330147599669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladrillos_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe445d5d00ddad2a0800000000000000
+      internalID: -6711809298985040657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladrillos_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4e354356d66fc50800000000000000
+      internalID: 6698661777197229310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9358d0be4680bebd0800000000000000
+      internalID: -2599975130343045831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_4
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf91c58dc4951910800000000000000
+      internalID: 1807514435892387804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_5
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9d50b1d1e2534d0800000000000000
+      internalID: -3155565261360866865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 114
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4690f36191bd8df20800000000000000
+      internalID: 3447746415546009956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 114
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e8e9b668deded30800000000000000
+      internalID: 4462483967380983314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_11
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 114
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0fa291ad449fd70800000000000000
+      internalID: 9077362227457749193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: suelo_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9e4f0a4a09f7ad0800000000000000
+      internalID: -2702282214649566773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viga_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303f3b0bc90075ae0800000000000000
+      internalID: -1560778072881106173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viga_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a699bbe143ad15a0800000000000000
+      internalID: -6548898779603822943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: viga_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24c6477b4f33a1f0800000000000000
+      internalID: -1034913896008858577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_16
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 82
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49583ddb62629520800000000000000
+      internalID: 2707334541415569742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_17
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 63
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f4fd92bcb50b9a0800000000000000
+      internalID: -6219370157259665656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_18
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 42
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fff474a1fd8b0a20800000000000000
+      internalID: 3029671243322556406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43c930934059a600800000000000000
+      internalID: 480003086404404042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c189e6f089230dfc0800000000000000
+      internalID: -3472219684027328484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290c0d5ca22d240c0800000000000000
+      internalID: -4592877588815232878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d26610add1c6360800000000000000
+      internalID: 7164133929403166014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6daa46ac60ed900800000000000000
+      internalID: 711013257513195216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zocalo_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 26
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f502661c44bef1310800000000000000
+      internalID: 1378078691533660255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_25
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 23
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd55006fdced4e20800000000000000
+      internalID: 3336583343084232141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7196886613c5b4830800000000000000
+      internalID: 4056437256620632343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_27
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a41a75b622a69640800000000000000
+      internalID: 5086431116298687648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_28
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3af128fbe3100670800000000000000
+      internalID: 8502818000676715066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_29
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bcb2880816ec370800000000000000
+      internalID: 8344714364232387366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c7049268092d090800000000000000
+      internalID: -8011181881246581738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_31
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361d5991627653880800000000000000
+      internalID: -8631879697450020509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_32
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea27bfa68eb07dd0800000000000000
+      internalID: -2490281108252972313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_33
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccadda8eeff178f10800000000000000
+      internalID: 2271819716717566668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TileMapStage1_34
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ff59930b17b5cd0800000000000000
+      internalID: -2568334160790421675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ladrillos_3: 6698661777197229310
+      TileMapStage1_34: -2568334160790421675
+      viga_3: -1034913896008858577
+      TileMapStage1_18: 3029671243322556406
+      zocalo_4: 7164133929403166014
+      TileMapStage1_3: -2599975130343045831
+      TileMapStage1_16: 2707334541415569742
+      viga_2: -6548898779603822943
+      zocalo_1: 480003086404404042
+      TileMapStage1_5: -3155565261360866865
+      TileMapStage1_10: 4462483967380983314
+      TileMapStage1_29: 8344714364232387366
+      TileMapStage1_9: 3447746415546009956
+      zocalo_5: 711013257513195216
+      zocalo_6: 1378078691533660255
+      TileMapStage1_4: 1807514435892387804
+      TileMapStage1_25: 3336583343084232141
+      TileMapStage1_27: 5086431116298687648
+      TileMapStage1_33: 2271819716717566668
+      TileMapStage1_17: -6219370157259665656
+      TileMapStage1_26: 4056437256620632343
+      TileMapStage1_28: 8502818000676715066
+      zocalo_2: -3472219684027328484
+      suelo_1: -2702282214649566773
+      TileMapStage1_30: -8011181881246581738
+      TileMapStage1_31: -8631879697450020509
+      TileMapStage1_11: 9077362227457749193
+      viga_1: -1560778072881106173
+      ladrillos_2: -6711809298985040657
+      zocalo_3: -4592877588815232878
+      ladrillos_1: 5528987330147599669
+      TileMapStage1_32: -2490281108252972313
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

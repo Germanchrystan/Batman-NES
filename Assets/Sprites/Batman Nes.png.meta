@@ -1,0 +1,3070 @@
+fileFormatVersion: 2
+guid: 560e3bbbdfcf01a4f991178114de229b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Batman Nes_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 292
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6f627350ede97e0800000000000000
+      internalID: -1756722690646411603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 292
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92acf2c4125c7fd00800000000000000
+      internalID: 1006489788543388201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 292
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43d6f098667d6900800000000000000
+      internalID: 679329310283584334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 292
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 470cc5a9ca961dce0800000000000000
+      internalID: -1382207420580970380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 292
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7987e9ee1b378a0800000000000000
+      internalID: -6308503014596896774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_5
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35588200b9105b010800000000000000
+      internalID: 1203870240625689939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc689514fd8c21ea0800000000000000
+      internalID: -5903435300329650485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218afaa5a77341d40800000000000000
+      internalID: 5554125239101663250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_8
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a24860ca6f324420800000000000000
+      internalID: 2612720461555450531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4c2348c769759d0800000000000000
+      internalID: -2785592382967331639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_10
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 317
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65b941493e22dc10800000000000000
+      internalID: 2076773201614583150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 317
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 419565eef82618940800000000000000
+      internalID: 5296623007082895636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_12
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 317
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d640cfbe56938630800000000000000
+      internalID: 3928148633685346009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_13
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 317
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf4b6e113933e040800000000000000
+      internalID: 4675643721267236809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_14
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 317
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d395245b5cc4b20800000000000000
+      internalID: 3120086024153808155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_15
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 317
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468de69c5d5de1990800000000000000
+      internalID: -7413252822421022620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_16
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 317
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3199ad7acbbdc9300800000000000000
+      internalID: 260324481797101843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_17
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 317
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebe69e6dcdc51c30800000000000000
+      internalID: 4329592898993974247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_18
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 317
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb84dea2142be6b30800000000000000
+      internalID: 4282556288638732476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_19
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 317
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91601bf1a512ec3f0800000000000000
+      internalID: -878728206328199655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_20
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 317
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91204994f345fc70800000000000000
+      internalID: 9004177747819372956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 317
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512dc8d29628d73d0800000000000000
+      internalID: -3207263971370544619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_22
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 292
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74a10730151b38d0800000000000000
+      internalID: -2865673578504674177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_23
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 305
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ebeac5bf40e4520800000000000000
+      internalID: 2688091505225023126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_24
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 305
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47baa9d30bb9fbe50800000000000000
+      internalID: 6827346741367057268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_25
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 305
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93da885bc234377f0800000000000000
+      internalID: -616074864716370631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_26
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 305
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f9d3c951ba5b9f0800000000000000
+      internalID: -453268078176919792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 305
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 766b815a3c7de7050800000000000000
+      internalID: 5800310605388232295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_28
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 305
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb212f2a1205e9c0800000000000000
+      internalID: -3898707590936187953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_29
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 305
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870d67e984428b390800000000000000
+      internalID: -7802446460104552328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_30
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 305
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecdb604d4b010d80800000000000000
+      internalID: -8286329412963803934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_31
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dccb8fe4f4d65bc0800000000000000
+      internalID: -3794611487557038894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_32
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 292
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05c768776cab4120800000000000000
+      internalID: 2399200786906596623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_33
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 292
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a998e734a2d4d1a90800000000000000
+      internalID: -7341626973627709030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_34
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 294
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ca77d3078443470800000000000000
+      internalID: 8373397254093384807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_35
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece76e07314c0e240800000000000000
+      internalID: 4819067189064007374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_36
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e73f23679133bba0800000000000000
+      internalID: -6074456946118805536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_37
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 292
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef51ce7f9f316c20800000000000000
+      internalID: 3197907164668714983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_38
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 294
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c702bbdbe90fe0f0800000000000000
+      internalID: -1085638076565157943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_39
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 292
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0eab03512a52590800000000000000
+      internalID: -7699569776024428320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_40
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 294
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03ca2be1d94a91e0800000000000000
+      internalID: -2190357102819884273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_41
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687294567c8c531a0800000000000000
+      internalID: -6830332501114148986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_42
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 294
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a4b41d69931e8a0800000000000000
+      internalID: -6277673085658510810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_43
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208a24527f579eda0800000000000000
+      internalID: -5915066931231938558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_44
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 294
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da859a46aeea210a0800000000000000
+      internalID: -6912270156325889875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_45
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 294
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345031471140a1150800000000000000
+      internalID: 5843987939474998595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_46
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 294
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98ffa6859c0fd780800000000000000
+      internalID: -8656186122433464163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_47
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 294
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacacba150f82c480800000000000000
+      internalID: -8880378263135015765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369a90fd8fbf54620800000000000000
+      internalID: 2757887393146710371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_49
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 256
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19b3ada1af9ca6e0800000000000000
+      internalID: -1824908232240154338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_50
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3b10feefc32f6d0800000000000000
+      internalID: -2958234939599768667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_51
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22866640f13b676f0800000000000000
+      internalID: -687164947328243678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_52
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 256
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00346a5b6b9caff0800000000000000
+      internalID: -23473012663373812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_53
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00081cf2cd7f4ac0800000000000000
+      internalID: -3868735278481407988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_54
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 256
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac548aa117e62e430800000000000000
+      internalID: 3810729666766456266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_55
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 256
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d06e63a56e92d040800000000000000
+      internalID: 4670969922907431128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_56
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 257
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3dbfed97954a9950800000000000000
+      internalID: 6456549533281140027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_57
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 222
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5756f43b484322d0800000000000000
+      internalID: -3304718213711505571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_58
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 222
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa6dd4c002b1a140800000000000000
+      internalID: 4729256800088320764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_59
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 222
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f658e286374857820800000000000000
+      internalID: 2915381964996248943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_60
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 222
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610db0c26555b9ed0800000000000000
+      internalID: -2406235747304878058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_61
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 222
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31939637d0f4f0b10800000000000000
+      internalID: 1949864082864158995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_62
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 245
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b971421731b600d0800000000000000
+      internalID: -3456880813872678479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_63
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 246
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a5704105e79e260800000000000000
+      internalID: 7127366767689030266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_64
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 246
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7832b77de16dd0270800000000000000
+      internalID: 8218460322973557639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_65
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 247
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a2e0dbf626cb870800000000000000
+      internalID: 8699936812225669765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_66
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 247
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6edab41dc5235b0800000000000000
+      internalID: -5390143750021454081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_67
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 236
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1626159b73eb8a0800000000000000
+      internalID: -6287526760688754217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_68
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 237
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f319a244a5879980800000000000000
+      internalID: -8532204028490607628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_69
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 237
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff45792570be0890800000000000000
+      internalID: -7489855113017339919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_70
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 237
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7ab91b341dd3eb0800000000000000
+      internalID: -4738401144251111458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_71
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 226
+        width: 24
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be7abd7f9ce24380800000000000000
+      internalID: -8988361736524759375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_72
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 226
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6dd39bf9aa5f560800000000000000
+      internalID: 7346965970109191847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_73
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 225
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd212fb086b44f20800000000000000
+      internalID: 3406047882277629363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_74
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 226
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33bc0f86408c87d0800000000000000
+      internalID: -2914813818279513281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_75
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 227
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5d92455efb78fc0800000000000000
+      internalID: -3492611994322086492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_76
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 226
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a15fd0d5b442310800000000000000
+      internalID: 1379310248920422972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_77
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 225
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a991c02577567670800000000000000
+      internalID: 8536106304299702688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_78
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 225
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fa247aa4a9b8860800000000000000
+      internalID: 7533284447131709278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_79
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 225
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c22639b830e40400800000000000000
+      internalID: 289602810288677575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_80
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 225
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a365ca801ff534ac0800000000000000
+      internalID: -3872145765771225542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_81
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 225
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 923ad519c0e82a060800000000000000
+      internalID: 6963284158497792809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_82
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 189
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278eae798c45b1f90800000000000000
+      internalID: -6981893576788875150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_83
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 189
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d908388b5a899200800000000000000
+      internalID: 187332985244617169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_84
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 188
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c5b00f3871fcac0800000000000000
+      internalID: -3832818902433571713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_85
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 188
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a481203e601348fc0800000000000000
+      internalID: -3493613505284532150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_86
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 188
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe61bb538296b030800000000000000
+      internalID: 3510154052458606335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_87
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 188
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d0fc0f6833ef8860800000000000000
+      internalID: 7534490533134921937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_88
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 185
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8fb834240887a60800000000000000
+      internalID: 7672022987315083512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_89
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 185
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c289d4ede9870dee0800000000000000
+      internalID: -1238357273797093332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_90
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 185
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877703d4ca2e8b3b0800000000000000
+      internalID: -5496394115548416136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_91
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 185
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e496d9672d81790800000000000000
+      internalID: -7559060567652479356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_92
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 185
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a195b15ec2d31daf0800000000000000
+      internalID: -373450031063410406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_93
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 161
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d20dbe1b76264a0800000000000000
+      internalID: -6601600089908564580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_94
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 161
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6ac0891f566c260800000000000000
+      internalID: 7117488349418137251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_95
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 160
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cec85d1995aaa540800000000000000
+      internalID: 5020006811698777795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_96
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 160
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc774e232d10870f0800000000000000
+      internalID: -1119142505092974643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_97
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 125
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a937ba9fa0683e10800000000000000
+      internalID: 2177596727164877218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_98
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 125
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32454e6e9a1c49740800000000000000
+      internalID: 5157960408713417763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_99
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 125
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e781b7e35b089d8f0800000000000000
+      internalID: -515239166431520642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_100
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 125
+        width: 32
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c8dee046a013a00800000000000000
+      internalID: 734379639101557798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_101
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 125
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb671db9045f07820800000000000000
+      internalID: 2914098616749618876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_102
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 126
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f3809652a968cd0800000000000000
+      internalID: -2556186253019562173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_103
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 128
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95e9eb1390991560800000000000000
+      internalID: 7285012833751393690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_104
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 127
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d550793184345d0800000000000000
+      internalID: -3079538471215997602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_105
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 125
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6353784f0bcf850800000000000000
+      internalID: 6412194533755664079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_106
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 125
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78c40d6a634a9210800000000000000
+      internalID: 1340457963470768254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_107
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 91
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06633287756394fb0800000000000000
+      internalID: -4663136189859809696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_108
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 91
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddaba27ca8cbe3f0800000000000000
+      internalID: -870381459982275116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_109
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 91
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbb2b6786ff0ba90800000000000000
+      internalID: -7300054171834467338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_110
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 91
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa56dfab4ea6498d0800000000000000
+      internalID: -2840527934341683793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_111
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 90
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7e1c2112ec08860800000000000000
+      internalID: 7530245218407409579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_112
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 90
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b803b621c2645020800000000000000
+      internalID: 2329595488974866617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_113
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 90
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9d469bd2de0dd00800000000000000
+      internalID: 995556298288585191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_114
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 90
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6d201031b43e8d0800000000000000
+      internalID: -2818326396810373472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_115
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 90
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20c15fda566ab2b0800000000000000
+      internalID: -5568025448810430420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_116
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 63
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fae0eb023ddf2d10800000000000000
+      internalID: 2103142758022703857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_117
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 63
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bc5b00f77925ef0800000000000000
+      internalID: -120867668257027250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_118
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 63
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3fcb3158a132020800000000000000
+      internalID: 2315723792262689747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_119
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 63
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef1c26ca4e19b780800000000000000
+      internalID: -8666862701396615192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_120
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 62
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea49b46060916f1b0800000000000000
+      internalID: -5623279571059370834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_121
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 62
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1141e5c948f76ec0800000000000000
+      internalID: -3573614783559024353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_122
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 62
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d312bcab9798a10800000000000000
+      internalID: 1912193359974317437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_123
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 62
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3116733af3cde170800000000000000
+      internalID: 8209433175138898234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_124
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 62
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b65f1377fec0fd0800000000000000
+      internalID: -2374259608312779874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_125
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 29
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34be3c66a2dda70b0800000000000000
+      internalID: -5730024401693054141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_126
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 29
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8c6f2be152969c0800000000000000
+      internalID: -3933571985749653341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_127
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 29
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca304f2f939b58e0800000000000000
+      internalID: -1703605722127779127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_128
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 28
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0a003e843df5f50800000000000000
+      internalID: 6872443866390241446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_129
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 28
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c0f7ddeefa9ac80800000000000000
+      internalID: -8310918196882371439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_130
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 28
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f0a0f620143f8a0800000000000000
+      internalID: -6272598377288298602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_131
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 29
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd614d41b62a75240800000000000000
+      internalID: 4780468110271715035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_132
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 29
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e615a85ed98e170800000000000000
+      internalID: 8207983930076393026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Batman Nes_133
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 27
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d27eeb9da6081b0800000000000000
+      internalID: -5656403648534074098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Batman Nes_96: -1119142505092974643
+      Batman Nes_99: -515239166431520642
+      Batman Nes_115: -5568025448810430420
+      Batman Nes_2: 679329310283584334
+      Batman Nes_128: 6872443866390241446
+      Batman Nes_29: -7802446460104552328
+      Batman Nes_66: -5390143750021454081
+      Batman Nes_94: 7117488349418137251
+      Batman Nes_30: -8286329412963803934
+      Batman Nes_35: 4819067189064007374
+      Batman Nes_93: -6601600089908564580
+      Batman Nes_102: -2556186253019562173
+      Batman Nes_8: 2612720461555450531
+      Batman Nes_23: 2688091505225023126
+      Batman Nes_132: 8207983930076393026
+      Batman Nes_19: -878728206328199655
+      Batman Nes_101: 2914098616749618876
+      Batman Nes_0: -1756722690646411603
+      Batman Nes_55: 4670969922907431128
+      Batman Nes_76: 1379310248920422972
+      Batman Nes_63: 7127366767689030266
+      Batman Nes_65: 8699936812225669765
+      Batman Nes_121: -3573614783559024353
+      Batman Nes_130: -6272598377288298602
+      Batman Nes_45: 5843987939474998595
+      Batman Nes_1: 1006489788543388201
+      Batman Nes_110: -2840527934341683793
+      Batman Nes_40: -2190357102819884273
+      Batman Nes_89: -1238357273797093332
+      Batman Nes_44: -6912270156325889875
+      Batman Nes_28: -3898707590936187953
+      Batman Nes_53: -3868735278481407988
+      Batman Nes_62: -3456880813872678479
+      Batman Nes_133: -5656403648534074098
+      Batman Nes_124: -2374259608312779874
+      Batman Nes_108: -870381459982275116
+      Batman Nes_36: -6074456946118805536
+      Batman Nes_105: 6412194533755664079
+      Batman Nes_117: -120867668257027250
+      Batman Nes_109: -7300054171834467338
+      Batman Nes_43: -5915066931231938558
+      Batman Nes_42: -6277673085658510810
+      Batman Nes_73: 3406047882277629363
+      Batman Nes_97: 2177596727164877218
+      Batman Nes_119: -8666862701396615192
+      Batman Nes_95: 5020006811698777795
+      Batman Nes_123: 8209433175138898234
+      Batman Nes_122: 1912193359974317437
+      Batman Nes_125: -5730024401693054141
+      Batman Nes_11: 5296623007082895636
+      Batman Nes_4: -6308503014596896774
+      Batman Nes_20: 9004177747819372956
+      Batman Nes_82: -6981893576788875150
+      Batman Nes_37: 3197907164668714983
+      Batman Nes_13: 4675643721267236809
+      Batman Nes_79: 289602810288677575
+      Batman Nes_52: -23473012663373812
+      Batman Nes_58: 4729256800088320764
+      Batman Nes_50: -2958234939599768667
+      Batman Nes_57: -3304718213711505571
+      Batman Nes_14: 3120086024153808155
+      Batman Nes_24: 6827346741367057268
+      Batman Nes_10: 2076773201614583150
+      Batman Nes_47: -8880378263135015765
+      Batman Nes_120: -5623279571059370834
+      Batman Nes_38: -1085638076565157943
+      Batman Nes_118: 2315723792262689747
+      Batman Nes_60: -2406235747304878058
+      Batman Nes_12: 3928148633685346009
+      Batman Nes_31: -3794611487557038894
+      Batman Nes_114: -2818326396810373472
+      Batman Nes_77: 8536106304299702688
+      Batman Nes_74: -2914813818279513281
+      Batman Nes_85: -3493613505284532150
+      Batman Nes_100: 734379639101557798
+      Batman Nes_49: -1824908232240154338
+      Batman Nes_67: -6287526760688754217
+      Batman Nes_86: 3510154052458606335
+      Batman Nes_48: 2757887393146710371
+      Batman Nes_18: 4282556288638732476
+      Batman Nes_25: -616074864716370631
+      Batman Nes_106: 1340457963470768254
+      Batman Nes_112: 2329595488974866617
+      Batman Nes_126: -3933571985749653341
+      Batman Nes_70: -4738401144251111458
+      Batman Nes_127: -1703605722127779127
+      Batman Nes_113: 995556298288585191
+      Batman Nes_17: 4329592898993974247
+      Batman Nes_6: -5903435300329650485
+      Batman Nes_78: 7533284447131709278
+      Batman Nes_131: 4780468110271715035
+      Batman Nes_84: -3832818902433571713
+      Batman Nes_75: -3492611994322086492
+      Batman Nes_61: 1949864082864158995
+      Batman Nes_9: -2785592382967331639
+      Batman Nes_116: 2103142758022703857
+      Batman Nes_107: -4663136189859809696
+      Batman Nes_54: 3810729666766456266
+      Batman Nes_32: 2399200786906596623
+      Batman Nes_87: 7534490533134921937
+      Batman Nes_26: -453268078176919792
+      Batman Nes_33: -7341626973627709030
+      Batman Nes_22: -2865673578504674177
+      Batman Nes_27: 5800310605388232295
+      Batman Nes_111: 7530245218407409579
+      Batman Nes_69: -7489855113017339919
+      Batman Nes_21: -3207263971370544619
+      Batman Nes_59: 2915381964996248943
+      Batman Nes_46: -8656186122433464163
+      Batman Nes_92: -373450031063410406
+      Batman Nes_41: -6830332501114148986
+      Batman Nes_80: -3872145765771225542
+      Batman Nes_81: 6963284158497792809
+      Batman Nes_98: 5157960408713417763
+      Batman Nes_51: -687164947328243678
+      Batman Nes_129: -8310918196882371439
+      Batman Nes_15: -7413252822421022620
+      Batman Nes_39: -7699569776024428320
+      Batman Nes_71: -8988361736524759375
+      Batman Nes_104: -3079538471215997602
+      Batman Nes_16: 260324481797101843
+      Batman Nes_90: -5496394115548416136
+      Batman Nes_3: -1382207420580970380
+      Batman Nes_34: 8373397254093384807
+      Batman Nes_56: 6456549533281140027
+      Batman Nes_103: 7285012833751393690
+      Batman Nes_68: -8532204028490607628
+      Batman Nes_5: 1203870240625689939
+      Batman Nes_83: 187332985244617169
+      Batman Nes_88: 7672022987315083512
+      Batman Nes_7: 5554125239101663250
+      Batman Nes_64: 8218460322973557639
+      Batman Nes_91: -7559060567652479356
+      Batman Nes_72: 7346965970109191847
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
