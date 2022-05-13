@@ -8,9 +8,8 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovement:MonoBehaviour
 {
-	public float speed=100f;
-	
 	// Jump basic values
+	public float speed=100f;
 	bool jumpRequest;
 	public float jumpForce=4f;
 	public float fallMultiplier = 50f;
@@ -19,11 +18,12 @@ public class PlayerMovement:MonoBehaviour
 	// Jump Remember Times
 	float JumpPressedRemember = 0;
     [SerializeField]
-    float JumpPressedRememberTime = 0.2f;
+    float JumpPressedRememberTime = 0.1f;
 
     float GroundedRemember = 0;
     [SerializeField]
-    float GroundedRememberTime = 0.25f;
+    float GroundedRememberTime = 0.15f;
+	private bool isTakingImpulse;
 
 	// Grounded Check
 	public Transform groundCheck;
@@ -31,31 +31,44 @@ public class PlayerMovement:MonoBehaviour
 	public float groundCheckRadius;
 	public bool isGrounded;
 
-	//Referencias
+	// General
 	private Rigidbody2D rg;
 	private Animator animator;
+	public float movePause = .5f;
 
-	//Movimiento
+	// Movement
 	private Vector2 movement;
 	private bool facingRight = true;
+	public float horizontalInput;
+	private bool canMove = true;
 
-	//Ataque
+	// Attack
 	private bool isAttacking;
 
-	void Awake() //Usualmente en esta función se definen variables
+	// Wall-Jumping
+	public Transform frontCheck;
+	public Transform wallJumpAngle;
+	public bool isFacingWall;
+	public bool isWallSliding;
+	public float frontCheckRadius;
+	public float wallSlideSpeed = 3f;
+	public Vector2 wallJumpDirection;
+	public float wallJumpForce = 5;
+//=========================================================================================================//
+	void Awake() 
 	{
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
 	}
 
-	void Update()//Aquí se suele obtener el input del jugador
+	void Update() // Input Checking
 	{
-		if (isAttacking == false)
+		if (!isAttacking && !isTakingImpulse && canMove)
 		{
 
 			//Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
 			// GetAxisRaw devuelve los valores del Input de forma más inmediata.
-			float horizontalInput = Input.GetAxisRaw("Horizontal");
+			horizontalInput = Input.GetAxisRaw("Horizontal");
 			movement = new Vector2(horizontalInput, 0f);
 
 			//Girar al personaje
@@ -69,11 +82,10 @@ public class PlayerMovement:MonoBehaviour
 			}
 		}
 
-		//Comprobamos si el personaje está sobre el suelo
-		//Para eso se usa el método OverlapCircle, en la clase Physics2D, que crea circulos invisibles, en la posición de groundCheck,
-		//con el radio igual a groundCheckRadius, y que detecta "Overlap" con cualquier objeto que pertenezca al groundLayer.
-		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+		CheckSurroundings();
 
+
+		//Jump
 		GroundedRemember -= Time.deltaTime;
         if (isGrounded) 
 		{
@@ -85,13 +97,15 @@ public class PlayerMovement:MonoBehaviour
 		{
             JumpPressedRemember = JumpPressedRememberTime;
         }
-        
-		//Salto
-		if((JumpPressedRemember > 0) && (isGrounded == true) && isAttacking==false) 
+
+		if((JumpPressedRemember > 0) && !isAttacking==false) 
 		{
-			JumpPressedRemember = JumpPressedRememberTime;
-			
+			if(isGrounded)
+			{
+				JumpPressedRemember = JumpPressedRememberTime;
+			} 
 		}
+		
 
 		if ((JumpPressedRemember > 0) && (GroundedRemember > 0))
         {
@@ -107,11 +121,20 @@ public class PlayerMovement:MonoBehaviour
 			rg.velocity = Vector2.zero;
 			animator.SetTrigger("Attack");
 		}
+
+		if(isWallSliding && Input.GetButtonDown("Jump")) 
+		{
+			WallJump();
+		}
+
+		// Wall Jump
+		CheckWallSliding(horizontalInput);
 	}
 
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
-	{
-		if (isAttacking==false)
+	{	
+		// Running movement
+		if (!isAttacking && !isTakingImpulse && canMove)
 		{
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
@@ -126,12 +149,25 @@ public class PlayerMovement:MonoBehaviour
             rg.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-		if (jumpRequest) 
-		{
-			rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);//ForceMode2D.Impulse le da más impulso al salto
-			jumpRequest = false;
+		if (jumpRequest)
+		{	
+			if(!isWallSliding) 
+			{
+				animator.SetTrigger("JumpImpulse");
+				StartCoroutine("StopMove");
+				isTakingImpulse=true;
+				jumpRequest = false;
+			}
 		}
 
+		if(isWallSliding)
+		{
+			if(rg.velocity.y < -wallSlideSpeed)
+			{
+				rg.velocity = new Vector2(rg.velocity.x, 2);
+			}
+		}
+	
 	}
 
 
@@ -140,7 +176,8 @@ public class PlayerMovement:MonoBehaviour
 		animator.SetBool("Idle", movement == Vector2.zero); //Idle será true siempre que movement sea igual al vector (0,0) 
 		animator.SetBool("isGrounded", isGrounded); //Booleano "isGrounded" en el script se conecta con el booleano homónimo del animator
 		animator.SetFloat("JumpVelocity", rg.velocity.y); //Float "JumpVelocity" del animator se conecta con el float del velocity en Y
-  
+		animator.SetBool("IsWallSliding", isWallSliding);
+		
 		if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
 		{
 			isAttacking = true;
@@ -148,8 +185,9 @@ public class PlayerMovement:MonoBehaviour
 		{
 			isAttacking = false;
 		}
+		
 	}
-
+//=========================================================================================================//
 	void Flip()
 	{
 		facingRight = !facingRight;//Con esto invertimos el valor del booleano. Si era true ahora es false y viceversa
@@ -157,5 +195,53 @@ public class PlayerMovement:MonoBehaviour
 		float localScaleX = transform.localScale.x; //Obtenemos la escala del personaje en X
 		localScaleX = localScaleX * -1f; //Invertimos la escala en X
 		transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z); //Se asigna el nuevo valor de X a la escala
+	}
+
+	private void CheckSurroundings()
+	{
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+		isFacingWall = Physics2D.OverlapCircle(frontCheck.position, frontCheckRadius, groundLayer);
+	}
+
+	public void GetJumpRequest() 
+	{
+		isTakingImpulse=false;
+		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);//ForceMode2D.Impulse le da más impulso al salto
+	}
+
+	private void CheckWallSliding(float horizontalInput)
+	{
+		if(!isGrounded && isFacingWall && rg.velocity.y < 0 && horizontalInput != 0)
+		{
+			isWallSliding = true;
+
+		} else 
+		{
+			isWallSliding = false;
+		}
+	}
+
+	private void WallJump()
+	{
+		float facingDirection = facingRight ? 1f : -1f;
+		Vector2 force = new Vector2(wallJumpDirection.x * wallJumpForce * -facingDirection, wallJumpDirection.y * wallJumpForce);
+		rg.velocity = Vector2.zero;
+		rg.AddForce(force, ForceMode2D.Impulse);
+		Flip();
+		StartCoroutine("StopMove");
+	}
+
+
+	IEnumerator StopMove()
+	{
+		canMove = false;
+		// transform.localScale = transform.localScale.x == 1 ? new Vector2(-1,1): Vector2.one;
+		// // transform.localScale = Vector2.one;
+		if(isGrounded)
+		{
+			canMove = true;
+		}
+		yield return new WaitForSeconds(movePause);
+		canMove = true;
 	}
 }
