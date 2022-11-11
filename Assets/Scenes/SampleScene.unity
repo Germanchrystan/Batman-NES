@@ -201,7 +201,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5393474, y: 1}
+    m_SensorSize: {x: 1.6014761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.892964, y: 58.94229, z: 141.2513}
+  m_LocalPosition: {x: 12.438362, y: 58.920845, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -718,14 +718,6 @@ MonoBehaviour:
   isGrounded: 0
   movePause: 0.5
   horizontalInput: 0
-  frontCheck: {fileID: 1827898626}
-  wallJumpAngle: {fileID: 207206901}
-  isFacingWall: 0
-  isWallSliding: 0
-  frontCheckRadius: 3
-  wallSlideSpeed: 3
-  wallJumpDirection: {x: 10, y: 10}
-  wallJumpForce: 10
 --- !u!61 &1119602331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4399,7 +4391,7 @@ GameObject:
   m_Layer: 0
   m_Name: FloorPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
