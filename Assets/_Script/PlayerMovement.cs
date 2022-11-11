@@ -34,7 +34,7 @@ public class PlayerMovement:MonoBehaviour
 	// General
 	private Rigidbody2D rg;
 	private Animator animator;
-	public float movePause = .5f;
+	public float movePause = .1f;
 
 	// Movement
 	private Vector2 movement;
@@ -45,15 +45,6 @@ public class PlayerMovement:MonoBehaviour
 	// Attack
 	private bool isAttacking;
 
-	// Wall-Jumping
-	public Transform frontCheck;
-	public Transform wallJumpAngle;
-	public bool isFacingWall;
-	public bool isWallSliding;
-	public float frontCheckRadius;
-	public float wallSlideSpeed = 3f;
-	public Vector2 wallJumpDirection;
-	public float wallJumpForce = 5;
 //=========================================================================================================//
 	void Awake() 
 	{
@@ -63,27 +54,8 @@ public class PlayerMovement:MonoBehaviour
 
 	void Update() // Input Checking
 	{
-		if (!isAttacking && !isTakingImpulse && canMove)
-		{
-
-			//Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
-			// GetAxisRaw devuelve los valores del Input de forma más inmediata.
-			horizontalInput = Input.GetAxisRaw("Horizontal");
-			movement = new Vector2(horizontalInput, 0f);
-
-			//Girar al personaje
-			if (horizontalInput < 0f && facingRight == true)
-			{
-				Flip();
-			}
-			else if (horizontalInput > 0f && facingRight == false)
-			{
-				Flip();
-			}
-		}
 
 		CheckSurroundings();
-
 
 		//Jump
 		GroundedRemember -= Time.deltaTime;
@@ -114,28 +86,39 @@ public class PlayerMovement:MonoBehaviour
             jumpRequest = true;
 		}
 		
-		//Esto recibe el input del Ataque
-		if(Input.GetButtonDown("Fire1") && isGrounded == true && isAttacking==false) 
+		// Esto recibe el input del Ataque
+		if(Input.GetButtonDown("Fire1") && isGrounded == true && isAttacking == false) 
 		{
-			movement = Vector2.zero;
-			rg.velocity = Vector2.zero;
-			animator.SetTrigger("Attack");
+			StartCoroutine(AttackCorroutine());
 		}
 
-		if(isWallSliding && Input.GetButtonDown("Jump")) 
+		// Lateral movement
+		if (!isAttacking && !isTakingImpulse && canMove)
 		{
-			WallJump();
-		}
 
-		// Wall Jump
-		CheckWallSliding(horizontalInput);
+			//Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
+			// GetAxisRaw devuelve los valores del Input de forma más inmediata.
+			horizontalInput = Input.GetAxisRaw("Horizontal");
+			movement = new Vector2(horizontalInput, 0f);
+
+			//Girar al personaje
+			if (horizontalInput < 0f && facingRight == true)
+			{
+				Flip();
+			}
+			else if (horizontalInput > 0f && facingRight == false)
+			{
+				Flip();
+			}
+		}
 	}
 
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
+		Debug.Log(canMove);
 		// Running movement
 		if (!isAttacking && !isTakingImpulse && canMove)
-		{
+		{	
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
 		}
@@ -151,32 +134,18 @@ public class PlayerMovement:MonoBehaviour
 
 		if (jumpRequest)
 		{	
-			if(!isWallSliding) 
-			{
-				animator.SetTrigger("JumpImpulse");
-				StartCoroutine("StopMove");
-				isTakingImpulse=true;
-				jumpRequest = false;
-			}
-		}
-
-		if(isWallSliding)
-		{
-			if(rg.velocity.y < -wallSlideSpeed)
-			{
-				rg.velocity = new Vector2(rg.velocity.x, 2);
-			}
+			animator.SetTrigger("JumpImpulse");
+			isTakingImpulse=true;
+			jumpRequest = false;
 		}
 	
 	}
-
 
 	void LateUpdate()
 	{
 		animator.SetBool("Idle", movement == Vector2.zero); //Idle será true siempre que movement sea igual al vector (0,0) 
 		animator.SetBool("isGrounded", isGrounded); //Booleano "isGrounded" en el script se conecta con el booleano homónimo del animator
 		animator.SetFloat("JumpVelocity", rg.velocity.y); //Float "JumpVelocity" del animator se conecta con el float del velocity en Y
-		animator.SetBool("IsWallSliding", isWallSliding);
 		
 		if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
 		{
@@ -200,7 +169,6 @@ public class PlayerMovement:MonoBehaviour
 	private void CheckSurroundings()
 	{
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-		isFacingWall = Physics2D.OverlapCircle(frontCheck.position, frontCheckRadius, groundLayer);
 	}
 
 	public void GetJumpRequest() 
@@ -209,39 +177,12 @@ public class PlayerMovement:MonoBehaviour
 		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);//ForceMode2D.Impulse le da más impulso al salto
 	}
 
-	private void CheckWallSliding(float horizontalInput)
+	IEnumerator AttackCorroutine()
 	{
-		if(!isGrounded && isFacingWall && rg.velocity.y < 0 && horizontalInput != 0)
-		{
-			isWallSliding = true;
-
-		} else 
-		{
-			isWallSliding = false;
-		}
-	}
-
-	private void WallJump()
-	{
-		float facingDirection = facingRight ? 1f : -1f;
-		Vector2 force = new Vector2(wallJumpDirection.x * wallJumpForce * -facingDirection, wallJumpDirection.y * wallJumpForce);
+		canMove = false; 
 		rg.velocity = Vector2.zero;
-		rg.AddForce(force, ForceMode2D.Impulse);
-		Flip();
-		StartCoroutine("StopMove");
-	}
-
-
-	IEnumerator StopMove()
-	{
-		canMove = false;
-		// transform.localScale = transform.localScale.x == 1 ? new Vector2(-1,1): Vector2.one;
-		// // transform.localScale = Vector2.one;
-		if(isGrounded)
-		{
-			canMove = true;
-		}
-		yield return new WaitForSeconds(movePause);
+		animator.SetTrigger("Attack");
+		yield return new WaitForSeconds(0.11f);
 		canMove = true;
 	}
 }
