@@ -251,7 +251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_24
+      name: heatwave_01
       rect:
         serializedVersion: 2
         x: 100
@@ -272,7 +272,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_25
+      name: heatwave_02
       rect:
         serializedVersion: 2
         x: 127
@@ -293,7 +293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_26
+      name: heatwave_03
       rect:
         serializedVersion: 2
         x: 151
@@ -314,15 +314,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_27
+      name: heatwave_fire_01
       rect:
         serializedVersion: 2
         x: 176
         y: 522
         width: 14
         height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,15 +335,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_28
+      name: heatwave_fire_02
       rect:
         serializedVersion: 2
         x: 200
         y: 521
         width: 14
         height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,15 +356,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies_29
+      name: heatwave_fire_03
       rect:
         serializedVersion: 2
         x: 223
         y: 518
         width: 16
         height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3428,21 +3428,18 @@ TextureImporter:
       enemies_185: 1486655102
       enemies_207: 1269710633
       enemies_44: -2030585804
-      enemies_29: 2080551878
+      enemies_199: -391988709
       enemies_55: -648320839
       enemies_74: 260590504
       enemies_98: -1740598213
       enemies_266: 857682468
       enemies_93: 1317759994
-      enemies_199: -391988709
       enemies_169: 581505399
       enemies_90: -1770210953
       enemies_65: -1231245128
-      enemies_24: 1750009871
+      enemies_77: -1158732334
       enemies_71: 368921505
       enemies_223: -378838631
-      enemies_77: -1158732334
-      enemies_26: 763387343
       enemies_58: -1454884106
       enemies_182: 275574729
       enemies_52: -1873422296
@@ -3452,9 +3449,9 @@ TextureImporter:
       enemies_218: 469031094
       enemies_66: 83629009
       enemies_175: 503764320
-      enemies_39: -1478711051
       enemies_59: -615455370
       enemies_164: -1514224729
+      enemies_39: -1478711051
       enemies_36: 798203210
       enemies_166: -1781009140
       enemies_15: -767523859
@@ -3483,12 +3480,12 @@ TextureImporter:
       enemies_64: -799436949
       enemies_179: 674185059
       enemies_171: 787460553
-      enemies_237: -373572135
-      enemies_107: 1316645360
-      enemies_162: 1492245808
-      enemies_117: -211476766
-      enemies_132: 331570170
       enemies_158: 2102881555
+      enemies_237: -373572135
+      enemies_162: 1492245808
+      enemies_107: 1316645360
+      enemies_132: 331570170
+      enemies_117: -211476766
       enemies_113: -711770230
       enemies_2: 1091061818
       enemies_258: 1547898711
@@ -3536,6 +3533,7 @@ TextureImporter:
       enemies_215: 2123947493
       enemies_240: 1392295612
       tracker_06: 197245850
+      heatwave_fire_02: -1438727073
       enemies_91: 1765608897
       enemies_243: 1121619903
       enemies_186: -1594782625
@@ -3565,12 +3563,13 @@ TextureImporter:
       enemies_69: 237775867
       enemies_3: -1013547011
       tracker_05: 1161589289
-      enemies_87: -910554611
+      heatwave_fire_03: 2080551878
       enemies_75: 2126736151
-      enemies_168: -1568901885
+      enemies_87: -910554611
       enemies_41: -557810997
       enemies_4: -2079358727
       enemies_35: 300261997
+      enemies_168: -1568901885
       enemies_88: -494489412
       enemies_196: -1531199219
       enemies_100: -338024072
@@ -3578,6 +3577,7 @@ TextureImporter:
       enemies_228: 1842235571
       enemies_53: 1621414244
       enemies_92: -488372909
+      heatwave_03: 763387343
       enemies_167: 1891842055
       enemies_201: -2099608190
       enemies_198: 838056752
@@ -3602,7 +3602,6 @@ TextureImporter:
       enemies_148: 801406496
       enemies_238: -606436535
       enemies_262: -1189812774
-      enemies_25: -952388678
       tracker_03: -792402762
       enemies_192: 14153205
       enemies_81: -1231292157
@@ -3615,14 +3614,13 @@ TextureImporter:
       enemies_155: -100849983
       enemies_253: 1563237629
       enemies_54: 241010764
-      enemies_28: -1438727073
       enemies_85: -1725329325
+      enemies_236: 433601765
       enemies_229: 1881810326
       shakedown_run_01: -1343891164
       enemies_105: -1583636228
       enemies_195: 866062649
       enemies_231: -433058995
-      enemies_236: 433601765
       tracker_11: 1965532084
       shakedown_run_06: 1263760171
       enemies_189: -1585390640
@@ -3636,9 +3634,11 @@ TextureImporter:
       enemies_110: 2093235515
       enemies_154: 1918797146
       enemies_7: 1015606882
+      heatwave_01: 1750009871
       enemies_119: -924086817
       enemies_209: 43069990
       enemies_248: -1036849354
+      heatwave_02: -952388678
       enemies_210: -1152477618
       enemies_30: -994389206
       tracker_08: -391504640
@@ -3649,7 +3649,6 @@ TextureImporter:
       enemies_268: 1476038380
       enemies_157: 1363953149
       enemies_94: -1494471720
-      enemies_27: 1379357742
       enemies_95: -1067332837
       tracker_04: 1352981188
       enemies_79: -1279906477
@@ -3660,6 +3659,7 @@ TextureImporter:
       enemies_6: -1259400765
       enemies_213: 1772872622
       enemies_109: -1939653743
+      heatwave_fire_01: 1379357742
       enemies_181: -1615605034
       enemies_118: 490683366
       enemies_112: 1671943585
