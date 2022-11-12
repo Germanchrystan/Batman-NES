@@ -115,7 +115,6 @@ public class PlayerMovement:MonoBehaviour
 
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
-		Debug.Log(canMove);
 		// Running movement
 		if (!isAttacking && !isTakingImpulse && canMove)
 		{	
