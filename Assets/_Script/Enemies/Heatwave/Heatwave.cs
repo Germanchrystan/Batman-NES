@@ -9,7 +9,7 @@ public class Heatwave : MonoBehaviour
     private bool shouldStartAttack = true;
     private bool shooting = false;
 
-    public float shootingTime = 1f;
+    public float shootingTime = 2f;
     public float waitingTime = 2f;
 
     public Transform firePoint;
@@ -48,6 +48,7 @@ public class Heatwave : MonoBehaviour
 	{
         shouldStartAttack = false;
         shooting = true;
+        Fire();
         yield return new WaitForSeconds(shootingTime);
         shooting = false;
         Destroy(instantiatedFire);
