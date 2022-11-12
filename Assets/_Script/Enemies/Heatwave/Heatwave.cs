@@ -14,7 +14,7 @@ public class Heatwave : MonoBehaviour
 
     public Transform firePoint;
     public GameObject heatwaveFire;
-     private GameObject instantiatedFire;
+    private GameObject instantiatedFire;
 
     void Awake()
     {
@@ -48,7 +48,6 @@ public class Heatwave : MonoBehaviour
 	{
         shouldStartAttack = false;
         shooting = true;
-        Fire(); 
         yield return new WaitForSeconds(shootingTime);
         shooting = false;
         Destroy(instantiatedFire);
