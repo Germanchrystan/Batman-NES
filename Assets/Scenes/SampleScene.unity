@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 207206901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WallJumpAngle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262818132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.945633, y: 6.825577, z: 141.2513}
+  m_LocalPosition: {x: 71.95437, y: -1.874424, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.32704, y: 58.921272, z: 141.2513}
+  m_LocalPosition: {x: 72.55898, y: 58.6865, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -572,9 +572,8 @@ GameObject:
   - component: {fileID: 1119602325}
   - component: {fileID: 1119602328}
   - component: {fileID: 1119602329}
-  - component: {fileID: 1119602331}
   - component: {fileID: 1119602330}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Batman
   m_TagString: Player
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -641,13 +640,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119602324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.5, y: 42.9, z: 0}
+  m_LocalPosition: {x: 69.4, y: 34.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2094815173}
   - {fileID: 1827898626}
   - {fileID: 207206901}
+  - {fileID: 1701415145}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -718,32 +718,6 @@ MonoBehaviour:
   isGrounded: 0
   movePause: 0.5
   horizontalInput: 0
---- !u!61 &1119602331
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119602324}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 3.3046155, y: -2.1701927}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24, y: 32}
-    newSize: {x: 150, y: 200}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.288312, y: 27.659615}
-  m_EdgeRadius: 0
 --- !u!1 &1297520281 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3381417920878809170, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
@@ -769,7 +743,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1333403166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,6 +4348,64 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1701415144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1701415145}
+  - component: {fileID: 1701415146}
+  m_Layer: 7
+  m_Name: HurtBox
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1701415145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701415144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1119602326}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1701415146
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701415144}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.6262016, y: -2.6965609}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.094963, y: 26.16791}
+  m_EdgeRadius: 0
 --- !u!1 &1827898625
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1827898626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrontPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4414,7 +4446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094815173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FloorPoint
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -4518,11 +4550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2999745401796178565, guid: 4893dba9f7260414a8551a33c0951f06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.5
+      value: 69.4
       objectReference: {fileID: 0}
     - target: {fileID: 2999745401796178565, guid: 4893dba9f7260414a8551a33c0951f06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.9
+      value: 34.2
       objectReference: {fileID: 0}
     - target: {fileID: 2999745401796178565, guid: 4893dba9f7260414a8551a33c0951f06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4561,6 +4593,10 @@ PrefabInstance:
       value: Batman
       objectReference: {fileID: 0}
     - target: {fileID: 2999745401796178567, guid: 4893dba9f7260414a8551a33c0951f06, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999745401796178567, guid: 4893dba9f7260414a8551a33c0951f06, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -4586,9 +4622,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3381417920263632097, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3381417920878809170, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
       propertyPath: m_Name
       value: Deadshot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381417920878809170, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3381417920878809173, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
       propertyPath: m_Size.y
