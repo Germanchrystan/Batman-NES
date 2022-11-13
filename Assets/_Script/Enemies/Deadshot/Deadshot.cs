@@ -13,7 +13,7 @@ public class Deadshot : MonoBehaviour
     public GameObject deadshotFire;
     private GameObject instantiatedFire;
 
-    // private bool facingLeft = true;
+    private bool facingLeft = true;
     // private int direction = -1;
     public float bulletSpeed = 100f;
     private Rigidbody2D bulletRg;
@@ -40,6 +40,14 @@ public class Deadshot : MonoBehaviour
     public void Fire() 
     {
         instantiatedFire = (GameObject) Instantiate(deadshotFire, firePoint.position, firePoint.rotation); 
+        BulletMovement bulletMovement = instantiatedFire.GetComponent<BulletMovement>();
+        if (facingLeft)
+        {
+            bulletMovement.direction = Vector2.left;
+        } else 
+        {
+            bulletMovement.direction = Vector2.right;
+        }
     }
 
     IEnumerator ShootAndWait()

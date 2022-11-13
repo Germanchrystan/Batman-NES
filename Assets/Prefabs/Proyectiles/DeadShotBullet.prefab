@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6303151824190025261}
   - component: {fileID: 4953985965439791277}
   - component: {fileID: 7021891232069278746}
+  - component: {fileID: 2964150095559970828}
+  - component: {fileID: 2176559605745116034}
   - component: {fileID: -4774941941547506927}
   m_Layer: 0
   m_Name: DeadShotBullet
@@ -112,6 +114,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &2964150095559970828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158925648208166977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976fc0425fad5254dbc18e8db36d24af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  direction: {x: 0, y: 0}
+  livingTime: 3
+--- !u!114 &2176559605745116034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158925648208166977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe6dd69a9c06a34590fe4e378c5b0f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
 --- !u!50 &-4774941941547506927
 Rigidbody2D:
   serializedVersion: 4
