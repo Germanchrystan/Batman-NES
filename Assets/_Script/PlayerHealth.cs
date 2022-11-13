@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponentInParent<Animator>();
 
         currentSceneName = SceneManager.GetActiveScene().name;
     }
@@ -34,11 +34,9 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine(InvisibilityFrame());
             if(currentHealth <= 0)
             {
-                Debug.Log("DEAD");
                 currentHealth = 0;
-                // animator.SetTrigger("Death");
+                animator.SetTrigger("Death");
             }
-            Debug.Log("Hitted" + currentHealth);
         }
     }
 
