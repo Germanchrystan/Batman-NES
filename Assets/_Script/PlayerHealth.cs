@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     private string currentSceneName;
     private Animator animator;
 
+    private bool canGetHit = true;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -26,12 +28,17 @@ public class PlayerHealth : MonoBehaviour
 
     public void GetDamage(int amount)
     {
-        currentHealth = currentHealth - amount;
-
-        if(currentHealth <= 0)
+        if (canGetHit)
         {
-            currentHealth = 0;
-            animator.SetTrigger("Death");
+            currentHealth = currentHealth - amount;
+            StartCoroutine(InvisibilityFrame());
+            if(currentHealth <= 0)
+            {
+                Debug.Log("DEAD");
+                currentHealth = 0;
+                // animator.SetTrigger("Death");
+            }
+            Debug.Log("Hitted" + currentHealth);
         }
     }
 
@@ -44,6 +51,13 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = totalHealth;
         }
 
+    }
+
+    IEnumerator InvisibilityFrame()
+    {
+        canGetHit = false;
+        yield return new WaitForSeconds(1f);
+        canGetHit = true;
     }
 
     public void DeathEvent()
