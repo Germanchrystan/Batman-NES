@@ -131,7 +131,7 @@ public class PlayerMovement:MonoBehaviour
             rg.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-		if (jumpRequest)
+		if (jumpRequest && !isTakingImpulse)
 		{	
 			animator.SetTrigger("JumpImpulse");
 			isTakingImpulse=true;
@@ -172,8 +172,9 @@ public class PlayerMovement:MonoBehaviour
 
 	public void GetJumpRequest() 
 	{
-		isTakingImpulse=false;
 		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);//ForceMode2D.Impulse le da más impulso al salto
+		isTakingImpulse=false;
+	
 	}
 
 	IEnumerator AttackCorroutine()

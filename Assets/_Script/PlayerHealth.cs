@@ -21,6 +21,11 @@ public class PlayerHealth : MonoBehaviour
         currentSceneName = SceneManager.GetActiveScene().name;
     }
 
+    void LateUpdate()
+    {
+        animator.SetBool("Damaged", !canGetHit);
+    }
+
     private void OnEnable()
     {
         currentHealth = totalHealth;
@@ -38,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
                 animator.SetTrigger("Death");
             }
         }
+        Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
     }
 
     public void AddHealth()
