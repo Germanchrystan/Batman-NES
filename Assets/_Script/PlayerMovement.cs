@@ -143,7 +143,7 @@ public class PlayerMovement:MonoBehaviour
             rg.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-		if (jumpRequest && !isTakingImpulse)
+		if (jumpRequest && !isTakingImpulse )
 		{	
 			animator.SetTrigger("JumpImpulse");
 			isTakingImpulse=true;
@@ -194,7 +194,11 @@ public class PlayerMovement:MonoBehaviour
 	{
 		canMove = false; 
 		rg.velocity = Vector2.zero;
-		animator.SetTrigger("Attack");
+		if(!isCrouching){
+			animator.SetTrigger("Attack");
+		} else {
+			animator.SetTrigger("CrouchPunch");
+		}
 		yield return new WaitForSeconds(0.11f);
 		canMove = true;
 	}
