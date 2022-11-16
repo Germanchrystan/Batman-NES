@@ -22,7 +22,7 @@ public class PlayerMovement:MonoBehaviour
 
     float GroundedRemember = 0;
     [SerializeField]
-    float GroundedRememberTime = 0.15f;
+    float GroundedRememberTime = 0.01f;
 	private bool isTakingImpulse;
 
 	// Grounded Check
@@ -44,6 +44,9 @@ public class PlayerMovement:MonoBehaviour
 
 	// Attack
 	private bool isAttacking;
+
+	private bool isCrouching = false;
+	private float verticalInput;
 
 //=========================================================================================================//
 	void Awake() 
@@ -111,12 +114,21 @@ public class PlayerMovement:MonoBehaviour
 				Flip();
 			}
 		}
+		verticalInput = Input.GetAxisRaw("Vertical");
+		if(verticalInput >= 0)
+		{
+			isCrouching = false;
+		}
+		if(isGrounded && rg.velocity.y == 0 && verticalInput < 0 )
+		{
+			isCrouching = true;
+		}
 	}
 
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
 		// Running movement
-		if (!isAttacking && !isTakingImpulse && canMove)
+		if (!isAttacking && !isTakingImpulse && canMove && !isCrouching)
 		{	
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
@@ -145,7 +157,8 @@ public class PlayerMovement:MonoBehaviour
 		animator.SetBool("Idle", movement == Vector2.zero); //Idle será true siempre que movement sea igual al vector (0,0) 
 		animator.SetBool("isGrounded", isGrounded); //Booleano "isGrounded" en el script se conecta con el booleano homónimo del animator
 		animator.SetFloat("JumpVelocity", rg.velocity.y); //Float "JumpVelocity" del animator se conecta con el float del velocity en Y
-		
+		animator.SetBool("isCrouching", isCrouching);
+
 		if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
 		{
 			isAttacking = true;
