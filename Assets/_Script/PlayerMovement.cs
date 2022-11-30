@@ -50,15 +50,16 @@ public class PlayerMovement:MonoBehaviour
 	private bool canMove = true;
 
 	// Attack
+	public Transform hitBox;
+	
 	private bool isAttacking;
-
 	private bool isCrouching = false;
 	private float verticalInput;
 
 	// Fire
 	private FireState currentFireState;
 	private int ammo = 100;
-
+	public GameObject batarang, pistolBullet, tripleBullet;
 
 //=========================================================================================================//
 	void Awake() 
@@ -66,12 +67,12 @@ public class PlayerMovement:MonoBehaviour
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
 	}
-
+//=========================================================================================================//
 	void Start()
 	{
 		currentFireState = FireState.BATARANG;
 	}
-
+//=========================================================================================================//
 	void Update() // Input Checking
 	{
 
@@ -151,7 +152,7 @@ public class PlayerMovement:MonoBehaviour
 			switchWeapon();
 		}
 	}
-
+//=========================================================================================================//
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
 		// Running movement
@@ -178,7 +179,7 @@ public class PlayerMovement:MonoBehaviour
 		}
 	
 	}
-
+//=========================================================================================================//
 	void LateUpdate()
 	{
 		animator.SetBool("Idle", movement == Vector2.zero); //Idle será true siempre que movement sea igual al vector (0,0) 
@@ -289,7 +290,6 @@ public class PlayerMovement:MonoBehaviour
     			Debug.Log("Unknwon Fire State");
 				break;
 		}
-		Debug.Log("Current Fire State: " + currentFireState);
 	}
 
 	void TriggerFireAnimation(string standingAnimation, string crouchingAnimation)
@@ -303,5 +303,31 @@ public class PlayerMovement:MonoBehaviour
 			animator.SetTrigger(crouchingAnimation);
 		}
 		*/
+	}
+
+	public void BatarangSpawn()
+	{
+		GameObject instantiatedFire = (GameObject) Instantiate(batarang, hitBox.position, hitBox.rotation);
+		
+		Batarang batarangScript = instantiatedFire.GetComponent<Batarang>();
+		batarangScript.direction = facingRight ? Vector2.right : Vector2.left;
+		batarangScript.returnPoint = hitBox;
+	}
+
+	public void PistolBulletSpawn()
+	{
+		GameObject instantiatedFire = (GameObject) Instantiate(pistolBullet, hitBox.position, hitBox.rotation);
+
+		PistolBullet pistolBulletScript = instantiatedFire.GetComponent<PistolBullet>();
+		pistolBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
+
+	}
+
+	public void TripleSpawn()
+	{
+		GameObject instantiatedFire = (GameObject) Instantiate(tripleBullet, hitBox.position, hitBox.rotation);
+
+		TripleBullet tripleBulletScript = instantiatedFire.GetComponent<TripleBullet>();
+		tripleBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
 	}
 }
