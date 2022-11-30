@@ -5,6 +5,13 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
+// Fire
+public enum FireState
+{
+	BATARANG,
+	PISTOL,
+	TRIPLE
+}
 
 public class PlayerMovement:MonoBehaviour
 {
@@ -48,11 +55,21 @@ public class PlayerMovement:MonoBehaviour
 	private bool isCrouching = false;
 	private float verticalInput;
 
+	// Fire
+	private FireState currentFireState;
+	private int ammo = 100;
+
+
 //=========================================================================================================//
 	void Awake() 
 	{
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
+	}
+
+	void Start()
+	{
+		currentFireState = FireState.BATARANG;
 	}
 
 	void Update() // Input Checking
@@ -92,7 +109,12 @@ public class PlayerMovement:MonoBehaviour
 		// Esto recibe el input del Ataque
 		if(Input.GetButtonDown("Fire1") && isGrounded == true && isAttacking == false) 
 		{
-			StartCoroutine(AttackCorroutine());
+			StartCoroutine(AttackCoroutine());
+		}
+
+		if(Input.GetButtonDown("Fire2") && isGrounded == true && isAttacking == false)
+		{
+			StartCoroutine(FireCoroutine());
 		}
 
 		// Lateral movement
@@ -123,6 +145,11 @@ public class PlayerMovement:MonoBehaviour
 		{
 			isCrouching = true;
 		}
+		// Change Fire Weapon
+		if (Input.GetButtonDown("Fire3"))
+		{
+			switchWeapon();
+		}
 	}
 
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
@@ -143,7 +170,7 @@ public class PlayerMovement:MonoBehaviour
             rg.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-		if (jumpRequest && !isTakingImpulse )
+		if (jumpRequest && !isTakingImpulse)
 		{	
 			animator.SetTrigger("JumpImpulse");
 			isTakingImpulse=true;
@@ -166,6 +193,13 @@ public class PlayerMovement:MonoBehaviour
 		{
 			isAttacking = false;
 		}
+		if(animator.GetCurrentAnimatorStateInfo(0).IsName("JumpImpulse"))
+		{
+			isTakingImpulse=true;
+		} else {
+			isTakingImpulse=false;
+		}
+
 		
 	}
 //=========================================================================================================//
@@ -185,12 +219,11 @@ public class PlayerMovement:MonoBehaviour
 
 	public void GetJumpRequest() 
 	{
-		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);//ForceMode2D.Impulse le da más impulso al salto
+		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); //ForceMode2D.Impulse le da más impulso al salto
 		isTakingImpulse=false;
-	
 	}
 
-	IEnumerator AttackCorroutine()
+	IEnumerator AttackCoroutine()
 	{
 		canMove = false; 
 		rg.velocity = Vector2.zero;
@@ -201,5 +234,74 @@ public class PlayerMovement:MonoBehaviour
 		}
 		yield return new WaitForSeconds(0.11f);
 		canMove = true;
+	}
+
+	IEnumerator FireCoroutine()
+	{
+		canMove = false;
+		rg.velocity = Vector2.zero;
+		switch(currentFireState)
+		{
+			case FireState.BATARANG:
+				if(ammo >= 1)
+				{
+					TriggerFireAnimation("FireBatarang", "CrouchFireBatarang");
+					ammo -= 1;
+				}
+				break;
+			case FireState.PISTOL:
+				if(ammo >= 2)
+				{
+					TriggerFireAnimation("FirePistol", "CrouchFirePistol");
+					ammo -= 2;
+				}
+				break;
+			case FireState.TRIPLE:
+				if(ammo >= 3)
+				{
+					TriggerFireAnimation("FireTriple", "CrouchFireTriple");
+					ammo -= 3;
+				}
+    			break;
+			default:
+    			Debug.Log("Unknwon Fire State");
+				break;
+		}
+		Debug.Log(ammo);
+		yield return new WaitForSeconds(0.11f);
+		canMove = true;
+	}
+
+	void switchWeapon()
+	{
+		switch(currentFireState)
+		{
+			case FireState.BATARANG:
+				currentFireState = FireState.PISTOL;
+				break;
+			case FireState.PISTOL:
+				currentFireState = FireState.TRIPLE;
+				break;
+			case FireState.TRIPLE:
+				currentFireState = FireState.BATARANG;
+    			break;
+			default:
+    			Debug.Log("Unknwon Fire State");
+				break;
+		}
+		Debug.Log("Current Fire State: " + currentFireState);
+	}
+
+	void TriggerFireAnimation(string standingAnimation, string crouchingAnimation)
+	{
+		Debug.Log(standingAnimation);
+		/*
+		if(!isCrouching)
+		{
+			animator.SetTrigger(standingAnimation);
+		} else {
+			animator.SetTrigger(crouchingAnimation);
+		}
+		*/
 	}
 }
