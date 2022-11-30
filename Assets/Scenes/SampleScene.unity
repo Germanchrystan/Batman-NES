@@ -4567,7 +4567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537637946326804403, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_Offset.x
-      value: 4.3926888
+      value: 3.3410378
       objectReference: {fileID: 0}
     - target: {fileID: 4537637946326804403, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_Offset.y
