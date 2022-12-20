@@ -4408,6 +4408,67 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &1624306977400286778
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.0682
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 57.483643
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808341, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624306978608808342, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_Name
+      value: Batarang
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722672081381756880, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b5faec274d9c9449a2f7b09f4f9b8f1, type: 3}
 --- !u!1001 &3381417919723964107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4557,6 +4618,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4537637945816846671, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
+      propertyPath: m_Name
+      value: HitBox
+      objectReference: {fileID: 0}
     - target: {fileID: 4537637946326804403, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_Size.x
       value: 12.094963
