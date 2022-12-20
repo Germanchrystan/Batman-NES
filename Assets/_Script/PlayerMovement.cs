@@ -30,7 +30,6 @@ public class PlayerMovement:MonoBehaviour
     float GroundedRemember = 0;
     [SerializeField]
     float GroundedRememberTime = 0.01f;
-	private bool isTakingImpulse;
 
 	// Grounded Check
 	public Transform groundCheck;
@@ -40,7 +39,6 @@ public class PlayerMovement:MonoBehaviour
 
 	// General
 	private Rigidbody2D rg;
-	private Animator animator;
 	public float movePause = .1f;
 
 	// Movement
@@ -60,6 +58,17 @@ public class PlayerMovement:MonoBehaviour
 	private FireState currentFireState;
 	private int ammo = 100;
 	public GameObject batarang, pistolBullet, tripleBullet;
+	
+	// Animator
+	private Animator animator;
+	private string currentAnimationState;
+
+	private bool bypassLateUpdate = false;
+
+	const string RUNNING = "Running";
+	const string IDLE = "Idle";
+	const string JUMPING = "Jump";
+	const string CROUCHING = "Crouching";
 
 //=========================================================================================================//
 	void Awake() 
@@ -86,9 +95,11 @@ public class PlayerMovement:MonoBehaviour
         }
 
         JumpPressedRemember -= Time.deltaTime;
-        if (Input.GetButtonDown("Jump")) 
+        if (Input.GetButtonDown("Jump") && isGrounded) 
 		{
             JumpPressedRemember = JumpPressedRememberTime;
+			bypassLateUpdate = true;
+			StartCoroutine(Jump());
         }
 
 		if((JumpPressedRemember > 0) && !isAttacking==false) 
@@ -119,7 +130,7 @@ public class PlayerMovement:MonoBehaviour
 		}
 
 		// Lateral movement
-		if (!isAttacking && !isTakingImpulse && canMove)
+		if (!isAttacking && canMove)
 		{
 
 			//Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
@@ -156,7 +167,7 @@ public class PlayerMovement:MonoBehaviour
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
 		// Running movement
-		if (!isAttacking && !isTakingImpulse && canMove && !isCrouching)
+		if (!isAttacking && canMove && !isCrouching)
 		{	
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
@@ -166,15 +177,14 @@ public class PlayerMovement:MonoBehaviour
 		if (rg.velocity.y < 0) 
 		{
             rg.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        } else if (rg.velocity.y > 0 && !Input.GetButton("Jump")) 
+        } 
+		else if (rg.velocity.y > 0 && !Input.GetButton("Jump")) 
 		{
             rg.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-		if (jumpRequest && !isTakingImpulse)
+		if (jumpRequest)
 		{	
-			animator.SetTrigger("JumpImpulse");
-			isTakingImpulse=true;
 			jumpRequest = false;
 		}
 	
@@ -182,26 +192,27 @@ public class PlayerMovement:MonoBehaviour
 //=========================================================================================================//
 	void LateUpdate()
 	{
-		animator.SetBool("Idle", movement == Vector2.zero); //Idle será true siempre que movement sea igual al vector (0,0) 
-		animator.SetBool("isGrounded", isGrounded); //Booleano "isGrounded" en el script se conecta con el booleano homónimo del animator
-		animator.SetFloat("JumpVelocity", rg.velocity.y); //Float "JumpVelocity" del animator se conecta con el float del velocity en Y
-		animator.SetBool("isCrouching", isCrouching);
+		string newAnimationState = IDLE;
+		if(!bypassLateUpdate)
+		{
 
-		if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-		{
-			isAttacking = true;
-		} else
-		{
-			isAttacking = false;
+			if(isGrounded)
+			{
+				if (movement != Vector2.zero)
+				{
+					newAnimationState = RUNNING;
+				}
+				else if(isCrouching)
+				{
+					newAnimationState = CROUCHING;
+				}
+			}
+			else 
+			{
+				newAnimationState = JUMPING;
+			} 
+			ChangeAnimationState(newAnimationState);
 		}
-		if(animator.GetCurrentAnimatorStateInfo(0).IsName("JumpImpulse"))
-		{
-			isTakingImpulse=true;
-		} else {
-			isTakingImpulse=false;
-		}
-
-		
 	}
 //=========================================================================================================//
 	void Flip()
@@ -218,10 +229,12 @@ public class PlayerMovement:MonoBehaviour
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 	}
 
-	public void GetJumpRequest() 
-	{
+	IEnumerator Jump() 
+	{	
+		bypassLateUpdate = false;
+		yield return new WaitForSeconds(0.11f);
+		isCrouching = false;
 		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); //ForceMode2D.Impulse le da más impulso al salto
-		isTakingImpulse=false;
 	}
 
 	IEnumerator AttackCoroutine()
@@ -329,5 +342,14 @@ public class PlayerMovement:MonoBehaviour
 
 		TripleBullet tripleBulletScript = instantiatedFire.GetComponent<TripleBullet>();
 		tripleBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
+	}
+
+	void ChangeAnimationState(string newAnimationState)
+	{
+		if (currentAnimationState == newAnimationState) return;
+
+		animator.Play(newAnimationState);
+
+		currentAnimationState = newAnimationState;
 	}
 }
