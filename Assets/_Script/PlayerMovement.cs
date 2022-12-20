@@ -40,6 +40,7 @@ public class PlayerMovement:MonoBehaviour
 	// General
 	private Rigidbody2D rg;
 	public float movePause = .1f;
+	public PlayerHealth playerHealth;
 
 	// Movement
 	private Vector2 movement;
@@ -69,12 +70,14 @@ public class PlayerMovement:MonoBehaviour
 	const string IDLE = "Idle";
 	const string JUMPING = "Jump";
 	const string CROUCHING = "Crouching";
+	const string DEATH = "Death";
 
 //=========================================================================================================//
 	void Awake() 
 	{
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
+		playerHealth=GetComponent<PlayerHealth>();
 	}
 //=========================================================================================================//
 	void Start()
@@ -138,14 +141,17 @@ public class PlayerMovement:MonoBehaviour
 			horizontalInput = Input.GetAxisRaw("Horizontal");
 			movement = new Vector2(horizontalInput, 0f);
 
-			//Girar al personaje
-			if (horizontalInput < 0f && facingRight == true)
+			if(playerHealth.currentHealth > 0)
 			{
-				Flip();
-			}
-			else if (horizontalInput > 0f && facingRight == false)
-			{
-				Flip();
+				//Girar al personaje
+				if (horizontalInput < 0f && facingRight == true)
+				{
+					Flip();
+				}
+				else if (horizontalInput > 0f && facingRight == false)
+				{
+					Flip();
+				}
 			}
 		}
 		verticalInput = Input.GetAxisRaw("Vertical");
@@ -167,7 +173,7 @@ public class PlayerMovement:MonoBehaviour
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
 		// Running movement
-		if (!isAttacking && canMove && !isCrouching)
+		if (!isAttacking && canMove && !isCrouching && playerHealth.currentHealth > 0)
 		{	
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
@@ -187,13 +193,17 @@ public class PlayerMovement:MonoBehaviour
 		{	
 			jumpRequest = false;
 		}
-	
 	}
 //=========================================================================================================//
 	void LateUpdate()
 	{
 		string newAnimationState = IDLE;
-		if(!bypassLateUpdate)
+		if (playerHealth.currentHealth == 0)
+		{
+			newAnimationState = DEATH;
+			ChangeAnimationState(newAnimationState);
+		}
+		else if(!bypassLateUpdate)
 		{
 
 			if(isGrounded)
@@ -232,6 +242,7 @@ public class PlayerMovement:MonoBehaviour
 	IEnumerator Jump() 
 	{	
 		bypassLateUpdate = false;
+		isCrouching = true;
 		yield return new WaitForSeconds(0.11f);
 		isCrouching = false;
 		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); //ForceMode2D.Impulse le da más impulso al salto
@@ -281,7 +292,6 @@ public class PlayerMovement:MonoBehaviour
     			Debug.Log("Unknwon Fire State");
 				break;
 		}
-		Debug.Log(ammo);
 		yield return new WaitForSeconds(0.11f);
 		canMove = true;
 	}
@@ -351,5 +361,10 @@ public class PlayerMovement:MonoBehaviour
 		animator.Play(newAnimationState);
 
 		currentAnimationState = newAnimationState;
+	}
+
+	void AttackComplete()
+	{
+		isAttacking = false;
 	}
 }

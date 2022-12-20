@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int totalHealth = 8;
-    private int currentHealth;
+    public int currentHealth;
     public RectTransform healthUI;
 
     private string currentSceneName;
@@ -40,7 +40,6 @@ public class PlayerHealth : MonoBehaviour
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
-                animator.SetTrigger("Death");
             }
         }
         Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
