@@ -50,8 +50,10 @@ public class PlayerMovement:MonoBehaviour
 
 	// Attack
 	public Transform hitBox;
-	
+	private bool isAttackPressed;
 	private bool isAttacking;
+	
+	// Crouch
 	private bool isCrouching = false;
 	private float verticalInput;
 
@@ -63,9 +65,9 @@ public class PlayerMovement:MonoBehaviour
 	// Animator
 	private Animator animator;
 	private string currentAnimationState;
-
 	private bool bypassLateUpdate = false;
 
+	// Animations
 	const string RUNNING = "Running";
 	const string IDLE = "Idle";
 	const string JUMPING = "Jump";
@@ -122,12 +124,12 @@ public class PlayerMovement:MonoBehaviour
 		}
 		
 		// Esto recibe el input del Ataque
-		if(Input.GetButtonDown("Fire1") && isGrounded == true && isAttacking == false) 
+		if(Input.GetButtonDown("Fire1") && isAttacking == false) 
 		{
 			StartCoroutine(AttackCoroutine());
 		}
 
-		if(Input.GetButtonDown("Fire2") && isGrounded == true && isAttacking == false)
+		if(Input.GetButtonDown("Fire2") && isAttacking == false)
 		{
 			StartCoroutine(FireCoroutine());
 		}
@@ -136,7 +138,7 @@ public class PlayerMovement:MonoBehaviour
 		if (!isAttacking && canMove)
 		{
 
-			//Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
+			// Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
 			// GetAxisRaw devuelve los valores del Input de forma más inmediata.
 			horizontalInput = Input.GetAxisRaw("Horizontal");
 			movement = new Vector2(horizontalInput, 0f);
@@ -227,11 +229,11 @@ public class PlayerMovement:MonoBehaviour
 //=========================================================================================================//
 	void Flip()
 	{
-		facingRight = !facingRight;//Con esto invertimos el valor del booleano. Si era true ahora es false y viceversa
+		facingRight = !facingRight; // Con esto invertimos el valor del booleano. Si era true ahora es false y viceversa
 
-		float localScaleX = transform.localScale.x; //Obtenemos la escala del personaje en X
-		localScaleX = localScaleX * -1f; //Invertimos la escala en X
-		transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z); //Se asigna el nuevo valor de X a la escala
+		float localScaleX = transform.localScale.x; // Obtenemos la escala del personaje en X
+		localScaleX = localScaleX * -1f; // Invertimos la escala en X
+		transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z); // Se asigna el nuevo valor de X a la escala
 	}
 
 	private void CheckSurroundings()
@@ -245,7 +247,7 @@ public class PlayerMovement:MonoBehaviour
 		isCrouching = true;
 		yield return new WaitForSeconds(0.11f);
 		isCrouching = false;
-		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); //ForceMode2D.Impulse le da más impulso al salto
+		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); // ForceMode2D.Impulse le da más impulso al salto
 	}
 
 	IEnumerator AttackCoroutine()
