@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1102 &-8537831185823882713
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JumpFireBatarang
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 945fac54fd849ac4db889a9cedf6a7d3, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-8452431198676271226
 AnimatorState:
   serializedVersion: 6
@@ -331,57 +357,72 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 7225002525803197114}
-    m_Position: {x: 620, y: 0, z: 0}
+    m_Position: {x: 300, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4676618638601219492}
-    m_Position: {x: 320, y: 0, z: 0}
+    m_Position: {x: 300, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8112199858505198865}
-    m_Position: {x: -90, y: -160, z: 0}
+    m_Position: {x: -40, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3906860327285640077}
-    m_Position: {x: 310, y: 400, z: 0}
+    m_Position: {x: 520, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6091634064447958661}
     m_Position: {x: 770, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -159880793291417814}
-    m_Position: {x: -200, y: 390, z: 0}
+    m_Position: {x: 770, y: 450, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4886131546574916663}
-    m_Position: {x: -450, y: -60, z: 0}
+    m_Position: {x: 840, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9173364682127197361}
-    m_Position: {x: -590, y: 30, z: 0}
+    m_Position: {x: 840, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6669736524064325660}
-    m_Position: {x: 320, y: -250, z: 0}
+    m_Position: {x: 80, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4801889108822161010}
-    m_Position: {x: 320, y: -410, z: 0}
+    m_Position: {x: -40, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6993427833816297061}
-    m_Position: {x: 900, y: 90, z: 0}
+    m_Position: {x: 180, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -803204194632811393}
-    m_Position: {x: 935, y: 155, z: 0}
+    m_Position: {x: 180, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8452431198676271226}
-    m_Position: {x: 970, y: 220, z: 0}
+    m_Position: {x: 400, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4808032187996313509}
-    m_Position: {x: 1005, y: 285, z: 0}
+    m_Position: {x: 400, y: 270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7267717242859038060}
-    m_Position: {x: 1040, y: 350, z: 0}
+    m_Position: {x: 620, y: 220, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3873193975481796009}
+    m_Position: {x: -40, y: 320, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -8537831185823882713}
+    m_Position: {x: 180, y: 320, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6192023825647117181}
+    m_Position: {x: 400, y: 320, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 7283533934681698916}
+    m_Position: {x: 620, y: 270, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8569184911896387086}
+    m_Position: {x: 620, y: 320, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -170, y: -290, z: 0}
-  m_EntryPosition: {x: 420, y: 170, z: 0}
-  m_ExitPosition: {x: 670, y: -310, z: 0}
+  m_AnyStatePosition: {x: 320, y: -10, z: 0}
+  m_EntryPosition: {x: 320, y: 110, z: 0}
+  m_ExitPosition: {x: 320, y: -50, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 4676618638601219492}
 --- !u!1101 &2448106272954335464
@@ -406,6 +447,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &3873193975481796009
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JumpPunch
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: db6a08f2c0711ae4db61a88664158aa3, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &3906860327285640077
 AnimatorState:
   serializedVersion: 6
@@ -510,6 +577,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &6192023825647117181
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JumpFirePistol
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 9f2533d10dcb41a49b4d342cf86b2c02, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &6993427833816297061
 AnimatorState:
   serializedVersion: 6
@@ -562,6 +655,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &7283533934681698916
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CrouchFireTriple
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 0f73183ae6099ce42b11e291db8af441, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &8112199858505198865
 AnimatorState:
   serializedVersion: 6
@@ -583,6 +702,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 787265eb5b96db641b3cf1757c2272e4, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &8569184911896387086
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: JumpFireTriple
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 720eaaed01cfc7a40b3e30db15d29cf1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -15,14 +15,18 @@ public enum FireState
 
 public class PlayerMovement:MonoBehaviour
 {
+	//------------------------------------------//
 	// Jump basic values
+	//------------------------------------------//
 	public float speed=100f;
 	bool jumpRequest;
 	public float jumpForce=4f;
 	public float fallMultiplier = 50f;
     public float lowJumpMultiplier = 40f;
 
+	//------------------------------------------//
 	// Jump Remember Times
+	//------------------------------------------//
 	float JumpPressedRemember = 0;
     [SerializeField]
     float JumpPressedRememberTime = 0.1f;
@@ -31,48 +35,74 @@ public class PlayerMovement:MonoBehaviour
     [SerializeField]
     float GroundedRememberTime = 0.01f;
 
+	//------------------------------------------//
 	// Grounded Check
+	//------------------------------------------//
 	public Transform groundCheck;
 	public LayerMask groundLayer;
 	public float groundCheckRadius;
 	public bool isGrounded;
-
+	
+	//------------------------------------------//
 	// General
+	//------------------------------------------//
 	private Rigidbody2D rg;
 	public float movePause = .1f;
 	public PlayerHealth playerHealth;
 
+	//------------------------------------------//
 	// Movement
+	//------------------------------------------//
 	private Vector2 movement;
 	private bool facingRight = true;
 	public float horizontalInput;
 	private bool canMove = true;
 
+	//------------------------------------------//
 	// Attack
+	//------------------------------------------//
 	public Transform hitBox;
 	private bool isAttackPressed;
 	private bool isAttacking;
+	private float attackDelay = 0.2f;	
 	
+	//------------------------------------------//
 	// Crouch
+	//------------------------------------------//
 	private bool isCrouching = false;
 	private float verticalInput;
 
+	//------------------------------------------//
 	// Fire
+	//------------------------------------------//
 	private FireState currentFireState;
 	private int ammo = 100;
 	public GameObject batarang, pistolBullet, tripleBullet;
 	
+	//------------------------------------------//
 	// Animator
+	//------------------------------------------//
 	private Animator animator;
 	private string currentAnimationState;
 	private bool bypassLateUpdate = false;
 
+	//------------------------------------------//
 	// Animations
+	//------------------------------------------//
 	const string RUNNING = "Running";
 	const string IDLE = "Idle";
 	const string JUMPING = "Jump";
 	const string CROUCHING = "Crouching";
 	const string DEATH = "Death";
+	
+	const string PUNCH = "Punch";
+	const string CROUCH_PUNCH = "CrouchPunch";
+	const string JUMP_PUNCH = "JumpPunch";
+
+	const string FIRE_BATARANG = "FireBatarang";
+	const string CROUCH_FIRE_BATARANG = "CrouchFireBatarang";
+	const string JUMP_FIRE_BATARANG = "JumpFireBatarang";
+
 
 //=========================================================================================================//
 	void Awake() 
@@ -126,7 +156,8 @@ public class PlayerMovement:MonoBehaviour
 		// Esto recibe el input del Ataque
 		if(Input.GetButtonDown("Fire1") && isAttacking == false) 
 		{
-			StartCoroutine(AttackCoroutine());
+			isAttackPressed = true;
+			//
 		}
 
 		if(Input.GetButtonDown("Fire2") && isAttacking == false)
@@ -195,6 +226,17 @@ public class PlayerMovement:MonoBehaviour
 		{	
 			jumpRequest = false;
 		}
+
+		if(isAttackPressed)
+		{
+			isAttackPressed = false;
+
+			if(!isAttacking)
+			{
+				isAttacking = true;
+				StartCoroutine(AttackCoroutine());
+			}
+		}
 	}
 //=========================================================================================================//
 	void LateUpdate()
@@ -205,7 +247,7 @@ public class PlayerMovement:MonoBehaviour
 			newAnimationState = DEATH;
 			ChangeAnimationState(newAnimationState);
 		}
-		else if(!bypassLateUpdate)
+		else if(!bypassLateUpdate && !isAttacking)
 		{
 
 			if(isGrounded)
@@ -252,15 +294,25 @@ public class PlayerMovement:MonoBehaviour
 
 	IEnumerator AttackCoroutine()
 	{
-		canMove = false; 
-		rg.velocity = Vector2.zero;
-		if(!isCrouching){
-			animator.SetTrigger("Attack");
-		} else {
-			animator.SetTrigger("CrouchPunch");
+		if(isCrouching)
+		{
+			canMove = false; 
+			rg.velocity = Vector2.zero;
+			ChangeAnimationState(CROUCH_PUNCH); 
 		}
-		yield return new WaitForSeconds(0.11f);
+		else if (!isGrounded)
+		{
+			ChangeAnimationState(JUMP_PUNCH);
+		}
+		else 
+		{
+			canMove = false; 
+			rg.velocity = Vector2.zero;
+			ChangeAnimationState(PUNCH);
+		}
+		yield return new WaitForSeconds(attackDelay);
 		canMove = true;
+		isAttacking = false;
 	}
 
 	IEnumerator FireCoroutine()
