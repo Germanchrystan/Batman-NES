@@ -12,18 +12,36 @@ public class PlayerHealth : MonoBehaviour
     private string currentSceneName;
     private Animator animator;
 
+    //------------------------------------------//
+	// Hit animation
+	//------------------------------------------//
+    private SpriteRenderer renderer;
+    public Color hittedColor;
+    public Color normalColor;
+    private bool canChangeColor = true;
+
+
     private bool canGetHit = true;
 
     private void Awake()
     {
         animator = gameObject.GetComponentInParent<Animator>();
-
         currentSceneName = SceneManager.GetActiveScene().name;
+        
+        renderer = GetComponent<SpriteRenderer>();
+        normalColor = renderer.color;
     }
 
     void LateUpdate()
     {
-        animator.SetBool("Damaged", !canGetHit);
+        if(!canGetHit)
+        {
+            renderer.color = hittedColor;
+            // if(canChangeColor)
+            // {
+            //     Invoke("SwitchDamageColor", 0.2f);
+            // }
+        }
     }
 
     private void OnEnable()
@@ -42,7 +60,6 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = 0;
             }
         }
-        Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
     }
 
     public void AddHealth()
@@ -53,7 +70,6 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = totalHealth;
         }
-
     }
 
     IEnumerator InvisibilityFrame()
@@ -73,5 +89,20 @@ public class PlayerHealth : MonoBehaviour
         Destroy(this.gameObject);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    // TODO make this switching work
+    void SwitchDamageColor()
+    {
+        canChangeColor = false;
+        if (renderer.color == hittedColor)
+        {
+            renderer.color = normalColor;
+        }
+        else
+        {
+            renderer.color = hittedColor;
+        }
+        canChangeColor = true;
     }
 }

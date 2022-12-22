@@ -64,7 +64,7 @@ public class PlayerMovement:MonoBehaviour
 	public Transform hitBox;
 	private bool isAttackPressed;
 	private bool isAttacking;
-	private float attackDelay = 0.2f;	
+	private float attackDelay = 0.25f;	
 	
 	//------------------------------------------//
 	// Crouch
@@ -363,7 +363,7 @@ public class PlayerMovement:MonoBehaviour
     			Debug.Log("Unknwon Fire State");
 				break;
 		}
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(attackDelay);
 		FireComplete();
 		canMove = true;
 	}
