@@ -78,6 +78,8 @@ public class PlayerMovement:MonoBehaviour
 	private FireState currentFireState;
 	private int ammo = 100;
 	public GameObject batarang, pistolBullet, tripleBullet;
+	private bool isFirePressed;
+	private bool isFiring;
 	
 	//------------------------------------------//
 	// Animator
@@ -103,6 +105,13 @@ public class PlayerMovement:MonoBehaviour
 	const string CROUCH_FIRE_BATARANG = "CrouchFireBatarang";
 	const string JUMP_FIRE_BATARANG = "JumpFireBatarang";
 
+	const string FIRE_PISTOL = "FirePistol";
+	const string CROUCH_FIRE_PISTOL = "CrouchFirePistol";
+	const string JUMP_FIRE_PISTOL = "JumpFirePistol";
+
+	const string FIRE_TRIPLE = "FireTriple";
+	const string CROUCH_FIRE_TRIPLE = "CrouchFireTriple";
+	const string JUMP_FIRE_TRIPLE = "JumpFireTriple";
 
 //=========================================================================================================//
 	void Awake() 
@@ -154,15 +163,14 @@ public class PlayerMovement:MonoBehaviour
 		}
 		
 		// Esto recibe el input del Ataque
-		if(Input.GetButtonDown("Fire1") && isAttacking == false) 
+		if(Input.GetButtonDown("Fire1") && !isAttacking && !isFiring) 
 		{
 			isAttackPressed = true;
-			//
 		}
 
-		if(Input.GetButtonDown("Fire2") && isAttacking == false)
+		if(Input.GetButtonDown("Fire2") && !isAttacking && !isFiring)
 		{
-			StartCoroutine(FireCoroutine());
+			isFirePressed = true;
 		}
 
 		// Lateral movement
@@ -237,6 +245,17 @@ public class PlayerMovement:MonoBehaviour
 				StartCoroutine(AttackCoroutine());
 			}
 		}
+
+		if(isFirePressed)
+		{
+			isFirePressed = false;
+
+			if(!isFiring && !isAttacking)
+			{
+				isFiring = true;
+				StartCoroutine(FireCoroutine());
+			}
+		}
 	}
 //=========================================================================================================//
 	void LateUpdate()
@@ -247,7 +266,7 @@ public class PlayerMovement:MonoBehaviour
 			newAnimationState = DEATH;
 			ChangeAnimationState(newAnimationState);
 		}
-		else if(!bypassLateUpdate && !isAttacking)
+		else if(!bypassLateUpdate && !isAttacking && !isFiring)
 		{
 
 			if(isGrounded)
@@ -312,33 +331,31 @@ public class PlayerMovement:MonoBehaviour
 		}
 		yield return new WaitForSeconds(attackDelay);
 		canMove = true;
-		isAttacking = false;
+		AttackComplete();
 	}
 
 	IEnumerator FireCoroutine()
 	{
-		canMove = false;
-		rg.velocity = Vector2.zero;
 		switch(currentFireState)
 		{
 			case FireState.BATARANG:
 				if(ammo >= 1)
 				{
-					TriggerFireAnimation("FireBatarang", "CrouchFireBatarang");
+					TriggerFireAnimation(FIRE_BATARANG, CROUCH_FIRE_BATARANG, JUMP_FIRE_BATARANG);
 					ammo -= 1;
 				}
 				break;
 			case FireState.PISTOL:
 				if(ammo >= 2)
 				{
-					TriggerFireAnimation("FirePistol", "CrouchFirePistol");
+					TriggerFireAnimation(FIRE_PISTOL, CROUCH_FIRE_PISTOL, JUMP_FIRE_PISTOL);
 					ammo -= 2;
 				}
 				break;
 			case FireState.TRIPLE:
 				if(ammo >= 3)
 				{
-					TriggerFireAnimation("FireTriple", "CrouchFireTriple");
+					TriggerFireAnimation(FIRE_TRIPLE, CROUCH_FIRE_TRIPLE, JUMP_FIRE_TRIPLE);
 					ammo -= 3;
 				}
     			break;
@@ -346,7 +363,8 @@ public class PlayerMovement:MonoBehaviour
     			Debug.Log("Unknwon Fire State");
 				break;
 		}
-		yield return new WaitForSeconds(0.11f);
+		yield return new WaitForSeconds(0.2f);
+		FireComplete();
 		canMove = true;
 	}
 
@@ -369,17 +387,25 @@ public class PlayerMovement:MonoBehaviour
 		}
 	}
 
-	void TriggerFireAnimation(string standingAnimation, string crouchingAnimation)
+	void TriggerFireAnimation(string standingAnimation, string crouchingAnimation, string jumpingAnimation)
 	{
-		Debug.Log(standingAnimation);
-		/*
-		if(!isCrouching)
+		if(isCrouching)
 		{
-			animator.SetTrigger(standingAnimation);
-		} else {
-			animator.SetTrigger(crouchingAnimation);
+			canMove = false; 
+			rg.velocity = Vector2.zero;
+			ChangeAnimationState(crouchingAnimation); 
 		}
-		*/
+		else if (!isGrounded)
+		{
+			ChangeAnimationState(jumpingAnimation);
+		}
+		else 
+		{
+			canMove = false; 
+			rg.velocity = Vector2.zero;
+			ChangeAnimationState(standingAnimation);
+		}
+		
 	}
 
 	public void BatarangSpawn()
@@ -420,5 +446,10 @@ public class PlayerMovement:MonoBehaviour
 	void AttackComplete()
 	{
 		isAttacking = false;
+	}
+
+	void FireComplete()
+	{
+		isFiring = false;
 	}
 }
