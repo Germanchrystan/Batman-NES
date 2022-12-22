@@ -42,6 +42,10 @@ public class PlayerHealth : MonoBehaviour
             //     Invoke("SwitchDamageColor", 0.2f);
             // }
         }
+        else 
+        {
+            renderer.color = normalColor;
+        }
     }
 
     private void OnEnable()
@@ -60,6 +64,7 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = 0;
             }
         }
+        Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
     }
 
     public void AddHealth()
@@ -90,8 +95,8 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(currentSceneName);
     }
-
-    // TODO make this switching work
+    
+    // TODO make this work
     void SwitchDamageColor()
     {
         canChangeColor = false;
