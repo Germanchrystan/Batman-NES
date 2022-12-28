@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class PistolBullet : MonoBehaviour
 {
+    private Rigidbody2D rigidbody;
+    public float speed = 100f;
     public Vector2 direction;
-    // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
+    
+    private void FixedUpdate() 
+    {
+        Vector2 movement = direction.normalized * speed;
+        rigidbody.velocity = movement;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnBecameInvisible()
     {
-        
+        Destroy(gameObject);
     }
 }
