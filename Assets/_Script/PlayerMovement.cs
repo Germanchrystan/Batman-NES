@@ -414,7 +414,7 @@ public class PlayerMovement:MonoBehaviour
 		
 		Batarang batarangScript = instantiatedFire.GetComponent<Batarang>();
 		batarangScript.direction = facingRight ? Vector2.right : Vector2.left;
-		batarangScript.returnPoint = hitBox;
+		batarangScript.returnPoint = gameObject.transform;
 	}
 
 	public void PistolBulletSpawn()

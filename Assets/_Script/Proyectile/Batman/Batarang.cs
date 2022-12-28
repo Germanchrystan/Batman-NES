@@ -5,8 +5,9 @@ using UnityEngine;
 public class Batarang : MonoBehaviour
 {
     private Rigidbody2D rigidbody;
-    public float speed = 100f;
+    public float speed = 150f;
     public Vector2 direction;
+    private Vector2 movement; 
     
     private float _startingTime;
     public float livingTime = 1f;
@@ -30,25 +31,27 @@ public class Batarang : MonoBehaviour
     {
         if (!returning)
         {
-            Vector2 movement = direction.normalized * speed;
-            rigidbody.velocity = movement;
+            movement = direction.normalized * speed;
         }
         else 
         {
             direction = new Vector2(returnPoint.position.x - transform.position.x, returnPoint.position.y - transform.position.y);
-            Vector2 movement = direction.normalized * speed;
-            rigidbody.velocity = movement;
+        
         }
+            movement = direction.normalized * speed;
+            rigidbody.velocity = movement;
 
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(returning)
+        if(returning && collision.transform.gameObject.layer == 7) // If the batarang is returning and collides with an object with the "PlayerHitBox"
         {
             Destroy(this.gameObject);
         }
     }
+
     private void Return()
     {
         returning = true;
