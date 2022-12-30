@@ -62,9 +62,10 @@ public class PlayerMovement:MonoBehaviour
 	// Attack
 	//------------------------------------------//
 	public Transform hitBox;
+	public Transform crouchHitBox;
 	private bool isAttackPressed;
 	private bool isAttacking;
-	private float attackDelay = 0.2f;	
+	private float attackDelay = 0.25f;	
 	
 	//------------------------------------------//
 	// Crouch
@@ -363,7 +364,7 @@ public class PlayerMovement:MonoBehaviour
     			Debug.Log("Unknwon Fire State");
 				break;
 		}
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(attackDelay);
 		FireComplete();
 		canMove = true;
 	}
@@ -410,16 +411,18 @@ public class PlayerMovement:MonoBehaviour
 
 	public void BatarangSpawn()
 	{
-		GameObject instantiatedFire = (GameObject) Instantiate(batarang, hitBox.position, hitBox.rotation);
+		Transform hitPoint = isCrouching ? crouchHitBox : hitBox;
+		GameObject instantiatedFire = (GameObject) Instantiate(batarang, hitPoint.position, hitPoint.rotation);
 		
 		Batarang batarangScript = instantiatedFire.GetComponent<Batarang>();
 		batarangScript.direction = facingRight ? Vector2.right : Vector2.left;
-		batarangScript.returnPoint = hitBox;
+		batarangScript.returnPoint = gameObject.transform;
 	}
 
 	public void PistolBulletSpawn()
 	{
-		GameObject instantiatedFire = (GameObject) Instantiate(pistolBullet, hitBox.position, hitBox.rotation);
+		Transform hitPoint = isCrouching ? crouchHitBox : hitBox;
+		GameObject instantiatedFire = (GameObject) Instantiate(pistolBullet, hitPoint.position, hitPoint.rotation);
 
 		PistolBullet pistolBulletScript = instantiatedFire.GetComponent<PistolBullet>();
 		pistolBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
@@ -428,7 +431,8 @@ public class PlayerMovement:MonoBehaviour
 
 	public void TripleSpawn()
 	{
-		GameObject instantiatedFire = (GameObject) Instantiate(tripleBullet, hitBox.position, hitBox.rotation);
+		Transform hitPoint = isCrouching ? crouchHitBox : hitBox;
+		GameObject instantiatedFire = (GameObject) Instantiate(tripleBullet, hitPoint.position, hitPoint.rotation);
 
 		TripleBullet tripleBulletScript = instantiatedFire.GetComponent<TripleBullet>();
 		tripleBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
