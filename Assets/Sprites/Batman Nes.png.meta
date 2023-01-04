@@ -574,7 +574,7 @@ TextureImporter:
         width: 26
         height: 22
       alignment: 9
-      pivot: {x: 0.5, y: 0.75}
+      pivot: {x: 0.5, y: 0.72727275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1490,27 +1490,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Batman Nes_66
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 247
-        width: 32
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff6edab41dc5235b0800000000000000
-      internalID: -5390143750021454081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Batman Nes_67
       rect:
         serializedVersion: 2
@@ -2064,8 +2043,8 @@ TextureImporter:
         y: 161
         width: 24
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2085,8 +2064,8 @@ TextureImporter:
         y: 161
         width: 32
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2106,8 +2085,8 @@ TextureImporter:
         y: 160
         width: 28
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2127,8 +2106,8 @@ TextureImporter:
         y: 160
         width: 23
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2547,8 +2526,8 @@ TextureImporter:
         y: 63
         width: 32
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2568,8 +2547,8 @@ TextureImporter:
         y: 63
         width: 29
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2589,8 +2568,8 @@ TextureImporter:
         y: 63
         width: 32
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2610,8 +2589,8 @@ TextureImporter:
         y: 63
         width: 23
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.65, y: 0.67}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2631,8 +2610,8 @@ TextureImporter:
         y: 62
         width: 23
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6956522}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2652,8 +2631,8 @@ TextureImporter:
         y: 62
         width: 24
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6956522}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2673,8 +2652,8 @@ TextureImporter:
         y: 62
         width: 32
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2694,8 +2673,8 @@ TextureImporter:
         y: 62
         width: 28
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2715,8 +2694,8 @@ TextureImporter:
         y: 62
         width: 23
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2917,6 +2896,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: health_bar
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 248
+        width: 3
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833868355df700942a239a5cd747e3eb
+      internalID: -5390143750021454081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: health_bar_empty
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 248
+        width: 3
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c07c15ee69d20449ad376e25dabbbf0
+      internalID: -757534358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2932,7 +2953,6 @@ TextureImporter:
       Batman Nes_2: 679329310283584334
       Batman Nes_128: 6872443866390241446
       Batman Nes_29: -7802446460104552328
-      Batman Nes_66: -5390143750021454081
       Batman Nes_94: 7117488349418137251
       Batman Nes_30: -8286329412963803934
       Batman Nes_35: 4819067189064007374
@@ -2950,6 +2970,7 @@ TextureImporter:
       Batman Nes_65: 8699936812225669765
       Batman Nes_121: -3573614783559024353
       Batman Nes_130: -6272598377288298602
+      health_bar_empty: -757534358
       Batman Nes_110: -2840527934341683793
       Batman Nes_1: 1006489788543388201
       Batman Nes_45: 5843987939474998595
@@ -3034,6 +3055,7 @@ TextureImporter:
       Batman Nes_69: -7489855113017339919
       Batman Nes_21: -3207263971370544619
       Batman Nes_59: 2915381964996248943
+      health_bar: -5390143750021454081
       Batman Nes_46: -8656186122433464163
       Batman Nes_92: -373450031063410406
       Batman Nes_41: -6830332501114148986
