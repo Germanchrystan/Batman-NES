@@ -36,6 +36,16 @@ public class PlayerMovement:MonoBehaviour
     float GroundedRememberTime = 0.01f;
 
 	//------------------------------------------//
+	// Wall Jump
+	//------------------------------------------//
+	public Transform frontPoint;
+	bool isFacingWall;
+	bool canWallJump;
+	public float frontCheckRadius;
+	bool isWallJumpPressed = false;
+	private bool isTakingWallJumpImpulse = false;
+
+	//------------------------------------------//
 	// Grounded Check
 	//------------------------------------------//
 	public Transform groundCheck;
@@ -132,13 +142,14 @@ public class PlayerMovement:MonoBehaviour
 
 		CheckSurroundings();
 
+		//------------------------------------------//
 		//Jump
+		//------------------------------------------//
 		GroundedRemember -= Time.deltaTime;
         if (isGrounded) 
 		{
             GroundedRemember = GroundedRememberTime;
         }
-
         JumpPressedRemember -= Time.deltaTime;
         if (Input.GetButtonDown("Jump") && isGrounded) 
 		{
@@ -146,7 +157,6 @@ public class PlayerMovement:MonoBehaviour
 			bypassLateUpdate = true;
 			StartCoroutine(Jump());
         }
-
 		if((JumpPressedRemember > 0) && !isAttacking==false) 
 		{
 			if(isGrounded)
@@ -162,13 +172,29 @@ public class PlayerMovement:MonoBehaviour
             GroundedRemember = 0;
             jumpRequest = true;
 		}
-		
-		// Esto recibe el input del Ataque
+
+		//------------------------------------------//
+		// Wall Jump
+		//------------------------------------------//
+		if(isFacingWall && !isGrounded)
+		{
+			if(Input.GetButtonDown("Jump"))
+			{
+				isWallJumpPressed = true;
+			}
+		}
+
+		//------------------------------------------//
+		// Attack
+		//------------------------------------------//
 		if(Input.GetButtonDown("Fire1") && !isAttacking && !isFiring) 
 		{
 			isAttackPressed = true;
 		}
 
+		//------------------------------------------//
+		// Fire
+		//------------------------------------------//
 		if(Input.GetButtonDown("Fire2") && !isAttacking && !isFiring)
 		{
 			isFirePressed = true;
@@ -257,6 +283,16 @@ public class PlayerMovement:MonoBehaviour
 				StartCoroutine(FireCoroutine());
 			}
 		}
+
+		if(isWallJumpPressed)
+		{
+			isWallJumpPressed = false;
+			if(!isFiring && !isAttacking)
+			{
+				isTakingWallJumpImpulse = true;
+				StartCoroutine(WallJumpCorroutine());
+			}
+		}
 	}
 //=========================================================================================================//
 	void LateUpdate()
@@ -267,7 +303,7 @@ public class PlayerMovement:MonoBehaviour
 			newAnimationState = DEATH;
 			ChangeAnimationState(newAnimationState);
 		}
-		else if(!bypassLateUpdate && !isAttacking && !isFiring)
+		else if(!bypassLateUpdate && !isAttacking && !isFiring && !isTakingWallJumpImpulse)
 		{
 
 			if(isGrounded)
@@ -301,6 +337,7 @@ public class PlayerMovement:MonoBehaviour
 	private void CheckSurroundings()
 	{
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+		isFacingWall = Physics2D.OverlapCircle(frontPoint.position, frontCheckRadius, groundLayer);
 	}
 
 	IEnumerator Jump() 
@@ -310,6 +347,16 @@ public class PlayerMovement:MonoBehaviour
 		yield return new WaitForSeconds(0.11f);
 		isCrouching = false;
 		rg.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse); // ForceMode2D.Impulse le da más impulso al salto
+	}
+
+	IEnumerator WallJumpCorroutine()
+	{
+		ChangeAnimationState("WallJumpImpulse");
+		canMove = false;
+		yield return new WaitForSeconds(0.25f);
+		rg.AddForce(Vector2.one*jumpForce, ForceMode2D.Impulse);
+		canMove = true;
+		WallJumpImpulseComplete();
 	}
 
 	IEnumerator AttackCoroutine()
@@ -446,7 +493,7 @@ public class PlayerMovement:MonoBehaviour
 
 		currentAnimationState = newAnimationState;
 	}
-
+	
 	void AttackComplete()
 	{
 		isAttacking = false;
@@ -455,5 +502,10 @@ public class PlayerMovement:MonoBehaviour
 	void FireComplete()
 	{
 		isFiring = false;
+	}
+
+	void WallJumpImpulseComplete()
+	{
+		isTakingWallJumpImpulse = false;
 	}
 }
