@@ -271,7 +271,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.599297, y: 1}
+    m_SensorSize: {x: 1.6, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262818132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.95437, y: -1.874424, z: 141.2513}
+  m_LocalPosition: {x: -107.14563, y: 0.92557526, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -687,7 +687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.55805, y: 58.6865, z: 141.2513}
+  m_LocalPosition: {x: 12.269648, y: 58.921494, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4678,11 +4678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4394055579546651775, guid: 00eb3fec4376d7a4f920f78354faab7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.53438
+      value: 738.39
       objectReference: {fileID: 0}
     - target: {fileID: 4394055579546651775, guid: 00eb3fec4376d7a4f920f78354faab7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.280554
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4394055579546651775, guid: 00eb3fec4376d7a4f920f78354faab7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4795,11 +4795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537637947056271155, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.4
+      value: -109.7
       objectReference: {fileID: 0}
     - target: {fileID: 4537637947056271155, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 34.2
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 4537637947056271155, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4853,6 +4853,10 @@ PrefabInstance:
       propertyPath: pistolBullet
       value: 
       objectReference: {fileID: 903855814973261127, guid: a1508a7280bf0b9458c726f407663fc3, type: 3}
+    - target: {fileID: 4537637947056271164, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
+      propertyPath: frontCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85a134c74daabeb4288c207c791491bd, type: 3}
 --- !u!1001 &5708860930352550955

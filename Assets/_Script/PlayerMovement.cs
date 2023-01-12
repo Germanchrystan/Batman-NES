@@ -39,11 +39,14 @@ public class PlayerMovement:MonoBehaviour
 	// Wall Jump
 	//------------------------------------------//
 	public Transform frontPoint;
+	public Transform wallJumpPoint;
+	private Vector2 wallJumpDirection;
 	bool isFacingWall;
 	bool canWallJump;
-	public float frontCheckRadius;
+	public float frontCheckRadius = 4f;
 	bool isWallJumpPressed = false;
 	private bool isTakingWallJumpImpulse = false;
+	private bool isWallJumping = false;
 
 	//------------------------------------------//
 	// Grounded Check
@@ -149,7 +152,14 @@ public class PlayerMovement:MonoBehaviour
         if (isGrounded) 
 		{
             GroundedRemember = GroundedRememberTime;
+
+			// Stop wall jumping if the character touches ground
+			if(isWallJumping)
+			{
+				WallJumpComplete();
+			}
         }
+
         JumpPressedRemember -= Time.deltaTime;
         if (Input.GetButtonDown("Jump") && isGrounded) 
 		{
@@ -201,7 +211,7 @@ public class PlayerMovement:MonoBehaviour
 		}
 
 		// Lateral movement
-		if (!isAttacking && canMove)
+		if (!isAttacking && canMove && !isWallJumping)
 		{
 
 			// Se usa la función GetAxisRaw en vez de GetAxis porque Unity suele demorar un poco la devolución del Input.
@@ -241,7 +251,7 @@ public class PlayerMovement:MonoBehaviour
 	void FixedUpdate() //Aquí se suele dar movimiento al personaje en base al Input
 	{	
 		// Running movement
-		if (!isAttacking && canMove && !isCrouching && playerHealth.currentHealth > 0)
+		if (!isAttacking && !isWallJumping && canMove && !isCrouching && playerHealth.currentHealth > 0)
 		{	
 			float horizontalVelocity = movement.normalized.x * speed;
 			rg.velocity = new Vector2(horizontalVelocity, rg.velocity.y);
@@ -292,6 +302,16 @@ public class PlayerMovement:MonoBehaviour
 				isTakingWallJumpImpulse = true;
 				StartCoroutine(WallJumpCorroutine());
 			}
+		}
+
+		if(isTakingWallJumpImpulse)
+		{
+			rg.gravityScale = 0;
+			rg.velocity = Vector2.zero;
+		}
+		else
+		{
+			rg.gravityScale = 25;
 		}
 	}
 //=========================================================================================================//
@@ -354,7 +374,10 @@ public class PlayerMovement:MonoBehaviour
 		ChangeAnimationState("WallJumpImpulse");
 		canMove = false;
 		yield return new WaitForSeconds(0.25f);
-		rg.AddForce(Vector2.one*jumpForce, ForceMode2D.Impulse);
+		Flip();
+		wallJumpDirection = new Vector2(wallJumpPoint.position.x - transform.position.x, wallJumpPoint.position.y - transform.position.y);
+		rg.AddForce(wallJumpDirection.normalized * jumpForce, ForceMode2D.Impulse);
+		isWallJumping = true;
 		canMove = true;
 		WallJumpImpulseComplete();
 	}
@@ -507,5 +530,10 @@ public class PlayerMovement:MonoBehaviour
 	void WallJumpImpulseComplete()
 	{
 		isTakingWallJumpImpulse = false;
+	}
+
+	void WallJumpComplete()
+	{
+		isWallJumping = false;
 	}
 }
