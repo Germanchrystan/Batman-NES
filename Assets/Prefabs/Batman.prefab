@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 4537637947056271167}
   - component: {fileID: 4537637947056271164}
   - component: {fileID: 4537637947056271165}
+  - component: {fileID: 8675860788250643247}
   - component: {fileID: 4537637947056271154}
   m_Layer: 7
   m_Name: Batman
@@ -331,6 +332,7 @@ MonoBehaviour:
   lowJumpMultiplier: 40
   JumpPressedRememberTime: 0.2
   GroundedRememberTime: 0.25
+  frontPoint: {fileID: 4537637946602322606}
   groundCheck: {fileID: 4537637946056647360}
   groundLayer:
     serializedVersion: 2
@@ -338,7 +340,13 @@ MonoBehaviour:
   groundCheckRadius: 1.5
   isGrounded: 0
   movePause: 0.5
+  playerHealth: {fileID: 0}
   horizontalInput: 0
+  hitBox: {fileID: 0}
+  crouchHitBox: {fileID: 0}
+  batarang: {fileID: 0}
+  pistolBullet: {fileID: 0}
+  tripleBullet: {fileID: 0}
 --- !u!61 &4537637947056271165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -365,6 +373,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.057907, y: 6.5286064}
   m_EdgeRadius: 0
+--- !u!114 &8675860788250643247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537637946438153184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48749d9e3d7c854295b8014487638a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontPoint: {fileID: 4537637946056647360}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  frontPointRadius: 0
 --- !u!114 &4537637947056271154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +403,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalHealth: 8
+  currentHealth: 0
   healthUI: {fileID: 0}
+  hittedColor: {r: 0, g: 0, b: 0, a: 0}
+  normalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4537637946602322607
 GameObject:
   m_ObjectHideFlags: 0
