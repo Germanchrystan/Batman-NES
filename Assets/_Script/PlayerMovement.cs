@@ -502,10 +502,21 @@ public class PlayerMovement:MonoBehaviour
 	public void TripleSpawn()
 	{
 		Transform hitPoint = isCrouching ? crouchHitBox : hitBox;
-		GameObject instantiatedFire = (GameObject) Instantiate(tripleBullet, hitPoint.position, hitPoint.rotation);
+		GameObject instantiatedFireUp = (GameObject) Instantiate(tripleBullet, hitPoint.position, hitPoint.rotation);
+		GameObject instantiatedFireMiddle = (GameObject) Instantiate(tripleBullet, hitPoint.position, hitPoint.rotation);
+		GameObject instantiatedFireDown = (GameObject) Instantiate(tripleBullet, hitPoint.position, hitPoint.rotation);
 
-		TripleBullet tripleBulletScript = instantiatedFire.GetComponent<TripleBullet>();
-		tripleBulletScript.direction = facingRight ? Vector2.right : Vector2.left;
+		TripleBullet tripleBulletScriptUp = instantiatedFireUp.GetComponent<TripleBullet>();
+		TripleBullet tripleBulletScriptMiddle = instantiatedFireMiddle.GetComponent<TripleBullet>();
+		TripleBullet tripleBulletScriptDown = instantiatedFireDown.GetComponent<TripleBullet>();
+
+		tripleBulletScriptUp.direction = facingRight ? Vector2.right : Vector2.left;
+		tripleBulletScriptMiddle.direction = facingRight ? Vector2.right : Vector2.left;
+		tripleBulletScriptDown.direction = facingRight ? Vector2.right : Vector2.left;
+
+		tripleBulletScriptUp.angle = 7.5f;
+		tripleBulletScriptMiddle.angle = 0f;
+		tripleBulletScriptDown.angle = -7.5f;
 	}
 
 	void ChangeAnimationState(string newAnimationState)
