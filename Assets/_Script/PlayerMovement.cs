@@ -5,13 +5,6 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
-// Fire
-public enum FireState
-{
-	BATARANG,
-	PISTOL,
-	TRIPLE
-}
 
 public class PlayerMovement:MonoBehaviour
 {
@@ -89,7 +82,13 @@ public class PlayerMovement:MonoBehaviour
 	//------------------------------------------//
 	// Fire
 	//------------------------------------------//
-	private FireState currentFireState;
+	public enum FireState
+	{
+		BATARANG,
+		PISTOL,
+		TRIPLE
+	}
+	public FireState currentFireState;
 	private int ammo = 100;
 	public GameObject batarang, pistolBullet, tripleBullet;
 	private bool isFirePressed;

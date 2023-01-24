@@ -5,8 +5,6 @@ using UnityEngine.UI;
 using System;
 
 public class HealthUI : MonoBehaviour {
-    public int health;
-
     RectTransform rectTransform;
     private GameObject player;
     public string objectName = "Batman"; 
