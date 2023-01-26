@@ -89,7 +89,7 @@ public class PlayerMovement:MonoBehaviour
 		TRIPLE
 	}
 	public FireState currentFireState;
-	private int ammo = 100;
+	public int ammo = 100;
 	public GameObject batarang, pistolBullet, tripleBullet;
 	private bool isFirePressed;
 	private bool isFiring;

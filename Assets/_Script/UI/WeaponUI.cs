@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WeaponUI : MonoBehaviour
 {
     RectTransform rectTransform;
+    
     private GameObject player;
     public string objectName = "Batman"; 
     public PlayerMovement playerMovementScript;
@@ -15,6 +16,11 @@ public class WeaponUI : MonoBehaviour
     public Sprite batarangSprite;
     public Sprite pistolSprite;
     public Sprite tripleSprite;
+
+    [SerializeField]
+    private Font ammoCounterFont;
+    private int ammo;
+    private Text ammoCounterText;
 
     void Awake()
     {
@@ -26,12 +32,28 @@ public class WeaponUI : MonoBehaviour
         currentFireState = playerMovementScript.currentFireState;
         
         imageComponent = gameObject.AddComponent<Image>();
-
+        
+        
+        // Weapon Counter
+        GameObject ammoCounter = new GameObject();
+        ammoCounter.name = "Weapon Counter";
+        ammoCounter.transform.SetParent(rectTransform);
+        ammoCounterText = ammoCounter.AddComponent<Text>();
+    
+        RectTransform ammoCounterRectTransform = ammoCounter.GetComponent<RectTransform>();
+        ammoCounterRectTransform.anchoredPosition = new Vector2(50, 0);
+        ammoCounterRectTransform.sizeDelta = new Vector2(50, 16);
+        
+        ammoCounterText.font = ammoCounterFont;
+        ammoCounterText.alignByGeometry = true;
+        ammo = playerMovementScript.ammo;
     }
 
     void Start()
     {
         setSprite(currentFireState);
+        setAmmoCounterText();
+        
     }
 
     void Update()
@@ -40,6 +62,11 @@ public class WeaponUI : MonoBehaviour
         {
             setSprite(playerMovementScript.currentFireState);
             currentFireState = playerMovementScript.currentFireState;
+        }
+        if(ammo != playerMovementScript.ammo)
+        {
+            setAmmoCounterText();
+            ammo = playerMovementScript.ammo;
         }
     }
 
@@ -60,5 +87,10 @@ public class WeaponUI : MonoBehaviour
                 imageComponent.sprite = batarangSprite;
                 break;
         }
+    }
+
+    void setAmmoCounterText()
+    {
+        ammoCounterText.text =  string.Format("{0}", playerMovementScript.ammo);
     }
 }
