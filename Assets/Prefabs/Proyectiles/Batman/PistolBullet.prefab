@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8184002405743650281}
   - component: {fileID: 2175970462634332422}
   - component: {fileID: -791811350543829689}
+  - component: {fileID: 2757640474532277926}
   m_Layer: 0
   m_Name: PistolBullet
   m_TagString: PlayerHitBox
@@ -169,3 +170,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   direction: {x: 0, y: 0}
+--- !u!114 &2757640474532277926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903855814973261127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c271ada8c4d57f34ca6ec87332f97b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
