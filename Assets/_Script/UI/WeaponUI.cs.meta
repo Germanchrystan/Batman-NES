@@ -3,7 +3,13 @@ guid: d08a97e0a9dd98645b7f5ffd199ee2cb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerMovementScript: {instanceID: 0}
+  - imageComponent: {instanceID: 0}
+  - batarangSprite: {instanceID: 0}
+  - pistolSprite: {instanceID: 0}
+  - tripleSprite: {instanceID: 0}
+  - ammoCounterFont: {fileID: 12800000, guid: 14852d7a9c0d17d48abd0370017b3e44, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
