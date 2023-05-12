@@ -25,12 +25,13 @@ public class Tracker : MonoBehaviour
     RaycastHit2D frontHitInfo; 
     public bool shouldFlip;
 
+    private EnemyHealth enemyHealth;
 
     void Awake()
     {
         rg=GetComponent<Rigidbody2D>();
         animator=GetComponent<Animator>();
-        
+        enemyHealth=GetComponent<EnemyHealth>(); 
     }
 
     // Update is called once per frame
@@ -44,8 +45,14 @@ public class Tracker : MonoBehaviour
 		} 
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         rg.velocity = new Vector2(speed * direction, rg.velocity.y);
+    }
+
+    void LateUpdate()
+    {
+        animator.SetBool("IsDead", enemyHealth.currentHealth == 0);
     }
 
     //=========================================================================================================//

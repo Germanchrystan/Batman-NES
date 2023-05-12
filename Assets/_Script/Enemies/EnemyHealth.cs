@@ -54,9 +54,4 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(invisibilityInterval);
         canGetHit = true;
     }
-
-    public void Death()
-    {
-        Destroy(this.gameObject);
-    }
 }
