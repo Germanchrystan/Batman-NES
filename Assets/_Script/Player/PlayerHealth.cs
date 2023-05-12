@@ -16,10 +16,9 @@ public class PlayerHealth : MonoBehaviour
 	// Hit animation
 	//------------------------------------------//
     private SpriteRenderer renderer;
-    public Color hittedColor;
+    public Color hittedColor; // RGBA(0.784, 0.298, 0.047, 1.000)
     public Color normalColor;
     private bool canChangeColor = true;
-
 
     private bool canGetHit = true;
 

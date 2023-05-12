@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4537637945816846670}
   - component: {fileID: 4537637945816846665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PunchHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,6 +333,8 @@ MonoBehaviour:
   JumpPressedRememberTime: 0.2
   GroundedRememberTime: 0.25
   frontPoint: {fileID: 4537637946602322606}
+  wallJumpPoint: {fileID: 0}
+  frontCheckRadius: 4
   groundCheck: {fileID: 4537637946056647360}
   groundLayer:
     serializedVersion: 2
@@ -344,6 +346,8 @@ MonoBehaviour:
   horizontalInput: 0
   hitBox: {fileID: 0}
   crouchHitBox: {fileID: 0}
+  currentFireState: 0
+  ammo: 100
   batarang: {fileID: 0}
   pistolBullet: {fileID: 0}
   tripleBullet: {fileID: 0}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -791811350543829689}
   m_Layer: 0
   m_Name: PistolBullet
-  m_TagString: Untagged
+  m_TagString: PlayerHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,4 +167,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbf6459d2db76440ba5aac55e20fbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 100
   direction: {x: 0, y: 0}

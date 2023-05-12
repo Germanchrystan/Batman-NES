@@ -59,4 +59,9 @@ public class Deadshot : MonoBehaviour
         Destroy(instantiatedFire);
 		canTriggerShoot = true;
 	}
+
+    public void GetDamage(int damageAmount)
+    {
+        Debug.Log("Got damage: " + damageAmount);
+    }
 }

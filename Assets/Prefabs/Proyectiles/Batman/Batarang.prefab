@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1647061190721641523}
   - component: {fileID: 1647061190721641534}
   - component: {fileID: 1647061190721641522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Batarang
-  m_TagString: Untagged
+  m_TagString: PlayerHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff8ccf9002a41d40ae050c5eef3d727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  returnPoint: {fileID: 0}
   speed: 100
   direction: {x: 0, y: 0}
   livingTime: 0.5
   returning: 0
+  returnPoint: {fileID: 0}
