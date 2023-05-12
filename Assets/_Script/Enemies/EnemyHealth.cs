@@ -23,14 +23,14 @@ public class EnemyHealth : MonoBehaviour
 
     void LateUpdate()
     {
-        if(!canGetHit)
+        if(!canGetHit && currentHealth > 0)
         {
-            animator.speed = 1;
+            // animator.speed = 1;
             renderer.color = hittedColor;
         }
-        else 
+        else if(currentHealth > 0) 
         {
-            animator.speed = 0;
+            // animator.speed = 0;
             renderer.color = normalColor;
         }
     }
@@ -44,7 +44,6 @@ public class EnemyHealth : MonoBehaviour
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
-                animator.Play("Death");
             }
         }
     }
