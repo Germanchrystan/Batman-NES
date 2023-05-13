@@ -18,25 +18,31 @@ public class Deadshot : MonoBehaviour
     public float bulletSpeed = 100f;
     private Rigidbody2D bulletRg;
 
+    private EnemyHealth enemyHealth;
+
     void Awake() 
 	{
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
+        enemyHealth=GetComponent<EnemyHealth>();
+
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if (canTriggerShoot)
+        if (canTriggerShoot && enemyHealth.currentHealth > 0)
         {
             StartCoroutine(ShootAndWait());
         } 
         
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
+        animator.SetBool("IsDead", enemyHealth.currentHealth == 0);
     }
+
     public void Fire() 
     {
         instantiatedFire = (GameObject) Instantiate(deadshotFire, firePoint.position, firePoint.rotation); 

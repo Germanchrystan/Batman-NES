@@ -16,20 +16,18 @@ public class Heatwave : MonoBehaviour
     public GameObject heatwaveFire;
     private GameObject instantiatedFire;
 
+    private EnemyHealth enemyHealth;
+
     void Awake()
     {
         animator=GetComponent<Animator>();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        enemyHealth=GetComponent<EnemyHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(shouldStartAttack) {
+        if(shouldStartAttack && enemyHealth.currentHealth > 0) {
             StartCoroutine(AttackCorroutine());
         }
     }
@@ -37,6 +35,7 @@ public class Heatwave : MonoBehaviour
     void LateUpdate() 
     {
         animator.SetBool("Shooting", shooting);
+        animator.SetBool("IsDead", enemyHealth.currentHealth == 0);
     }
 
     void Fire() 
