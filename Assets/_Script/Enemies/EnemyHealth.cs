@@ -55,7 +55,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHitBox.DeactivateHitBoxes();
         canGetHit = false;
         yield return new WaitForSeconds(invisibilityInterval);
-        enemyHitBox.ActivateHitBoxes();
+        if (currentHealth > 0) enemyHitBox.ActivateHitBoxes();
         canGetHit = true;
     }
 }
