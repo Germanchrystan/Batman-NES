@@ -47,7 +47,7 @@ public class WeaponUI : MonoBehaviour
         ammoCounterText.font = ammoCounterFont;
         ammoCounterText.alignByGeometry = true;
         ammoCounterText.color = new Color(.94f, 0.75f, 0.53f, 1f);
-         ammoCounterText.alignment = TextAnchor.MiddleCenter;
+        ammoCounterText.alignment = TextAnchor.MiddleCenter;
         ammo = playerMovementScript.ammo;
     }
 
