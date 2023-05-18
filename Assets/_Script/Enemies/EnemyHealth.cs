@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     private SpriteRenderer renderer;
     private Animator animator;
+    private EnemyHitBox enemyHitBox;
 
     public Color normalColor;
     public Color hittedColor= new Color(0.8f, 0.3f, 0.05f); // RGBA(0.784, 0.298, 0.047, 1.000)
@@ -18,6 +19,7 @@ public class EnemyHealth : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
+        enemyHitBox = GetComponent<EnemyHitBox>();
         normalColor = renderer.color;
     }
 
@@ -50,8 +52,10 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator InvisibilityFrame()
     {
+        enemyHitBox.DeactivateHitBoxes();
         canGetHit = false;
         yield return new WaitForSeconds(invisibilityInterval);
+        enemyHitBox.ActivateHitBoxes();
         canGetHit = true;
     }
 }

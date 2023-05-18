@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 5708860929134735352}
   - component: {fileID: 4360930713132887016}
   - component: {fileID: 1966542772504170520}
+  - component: {fileID: 8415747793713184887}
   m_Layer: 3
   m_Name: Tracker
   m_TagString: Untagged
@@ -268,6 +269,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e559cfaccacd2640b28327ccc454925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8415747793713184887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708860929134735353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c93e3a8f3280342a989c2aa9708fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5708860930082934556
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +294,7 @@ GameObject:
   - component: {fileID: 5708860930082934546}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
