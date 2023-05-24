@@ -7,7 +7,6 @@ public class LateralPatrolling : MonoBehaviour
     // General
 	private Rigidbody2D rg;
 	private Animator animator;
-	public float movePause = .1f;
 
     // Movement
     public float speed=10f;
@@ -29,7 +28,7 @@ public class LateralPatrolling : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void _Update()
     {
         shouldFlip=checkSurrounding.ShouldFlip(facingLeft);
         if(shouldFlip)
@@ -39,7 +38,7 @@ public class LateralPatrolling : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    public void _FixedUpdate()
     {
         rg.velocity = new Vector2(speed * direction, rg.velocity.y);
     }
