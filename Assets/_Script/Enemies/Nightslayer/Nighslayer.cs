@@ -7,8 +7,9 @@ public class Nighslayer : MonoBehaviour
     private Rigidbody2D rg;
     private DetectPlayerOnFront detectPlayerOnFront;
     private LateralPatrolling lateralPatrolling;
-
+    private EnemyHealth enemyHealth;
     private bool playerDetected = false;
+    private bool isAlive = true;
 
     // Animation
     private Animator animator;
@@ -20,13 +21,15 @@ public class Nighslayer : MonoBehaviour
         animator=GetComponent<Animator>();
         detectPlayerOnFront=GetComponent<DetectPlayerOnFront>();
         lateralPatrolling=GetComponent<LateralPatrolling>();
+        enemyHealth=GetComponent<EnemyHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        isAlive = enemyHealth.currentHealth > 0;
         playerDetected = detectPlayerOnFront.DetectPlayer();
-        if(!playerDetected)
+        if(!playerDetected && isAlive)
         {
             lateralPatrolling._Update();
         }
@@ -34,7 +37,7 @@ public class Nighslayer : MonoBehaviour
 
     void FixedUpdate()
     {   
-        if(!playerDetected)
+        if(!playerDetected && isAlive)
         //if(!playerDetected && currentAnimationState != "Attack")
         {
             lateralPatrolling._FixedUpdate();
@@ -48,6 +51,12 @@ public class Nighslayer : MonoBehaviour
     void LateUpdate()
     {
         string newAnimationState;
+        if(!isAlive)
+        {
+            newAnimationState = "Death";
+            ChangeAnimationState(newAnimationState);
+            return;
+        }
         if(!playerDetected)
         {
             newAnimationState = "Walking";
