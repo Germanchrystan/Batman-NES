@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private SpriteRenderer renderer;
-    private Animator animator;
+    // private Animator animator;
     private EnemyHitBox enemyHitBox;
 
     public Color normalColor;
@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         enemyHitBox = GetComponent<EnemyHitBox>();
         normalColor = renderer.color;
