@@ -38,7 +38,6 @@ public class Nighslayer : MonoBehaviour
     void FixedUpdate()
     {   
         if(!playerDetected && isAlive)
-        //if(!playerDetected && currentAnimationState != "Attack")
         {
             lateralPatrolling._FixedUpdate();
         }
