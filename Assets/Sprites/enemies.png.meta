@@ -1809,9 +1809,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 221
-        width: 8
-        height: 8
+        y: 197
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,27 +1821,6 @@ TextureImporter:
       bones: []
       spriteID: 1bb02f5363746ed47b410475fed23add
       internalID: -746024073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies_151
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 221
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 612c9b455b260954b93ddbe14ce11c0a
-      internalID: 1329421792
       vertices: []
       indices: 
       edges: []
@@ -1947,48 +1926,6 @@ TextureImporter:
       bones: []
       spriteID: 733842652e14efd48804f7c4e7ef23bc
       internalID: 1891842055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies_168
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 197
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3469b92e09c94643ad6985d1793a1ac
-      internalID: -1568901885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies_169
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 197
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecdc198d7715d8745bd5145ffa483a79
-      internalID: 581505399
       vertices: []
       indices: 
       edges: []
@@ -2905,8 +2842,8 @@ TextureImporter:
       enemies_218: 469031094
       enemies_66: 83629009
       enemies_175: 503764320
-      enemies_59: -615455370
       enemies_164: -1514224729
+      enemies_59: -615455370
       enemies_39: -1478711051
       enemies_36: 798203210
       enemies_166: -1781009140
@@ -2936,12 +2873,12 @@ TextureImporter:
       enemies_64: -799436949
       enemies_179: 674185059
       enemies_171: 787460553
-      enemies_117: -211476766
       enemies_158: 2102881555
-      enemies_162: 1492245808
       enemies_237: -373572135
-      enemies_132: 331570170
+      enemies_162: 1492245808
       enemies_107: 1316645360
+      enemies_132: 331570170
+      enemies_117: -211476766
       enemies_113: -711770230
       enemies_2: 1091061818
       enemies_258: 1547898711
