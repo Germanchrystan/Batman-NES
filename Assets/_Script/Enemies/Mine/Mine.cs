@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,12 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     private bool playerFound = false;
+    private bool setTarget = false;
     private bool shouldExplode = false;
+    private GameObject target;
     private Vector2 playerPosition;
-    public float speed=10f;
+    private float speed=100f;
     private Rigidbody2D rg;
-    
     // Animation
 	private Animator animator;
     private string currentAnimationState;
@@ -18,6 +20,8 @@ public class Mine : MonoBehaviour
     private const string MOVE = "Move";
     private const string EXPLODE = "Explode";
     private const string IDLE = "Idle";
+
+    public Sprite referenceImage;
     void Awake()
     {
         rg=GetComponent<Rigidbody2D>();
@@ -29,7 +33,13 @@ public class Mine : MonoBehaviour
     {
         if(playerFound && !shouldExplode)
         {
-            MoveTowardsTarget(playerPosition);
+            if(!setTarget)
+            {
+                SetTarget(playerPosition);
+            }
+            else {
+                MoveTowardsTarget();
+            }
         }
         else
         {
@@ -56,22 +66,40 @@ public class Mine : MonoBehaviour
     public void PlayerFound(Vector2 playerFoundPosition)
     {
         playerFound = true;
-        playerPosition = new Vector2(playerFoundPosition.x, this.transform.position.y);
+        playerPosition = new Vector2(playerFoundPosition.x, playerFoundPosition.y);
     }
 
-    void MoveTowardsTarget(Vector2 target) 
+    void drawTargetPoint(float x, float y)
     {
-        Vector2 currentPosition = transform.position;
-        Vector2 offset = target - currentPosition;
+        target = new GameObject("Target Point");
+        target.transform.position = new Vector3(x, y, 0);
+        // SpriteRenderer renderer = target.AddComponent<SpriteRenderer>();
+        // renderer.sprite = referenceImage;
+    }
+
+    void SetTarget(Vector2 target)
+    {
+        float currentYPosition = transform.position.y;
+        Vector2 offset = new Vector2 (target.x, currentYPosition);
+        drawTargetPoint(offset.x, offset.y);
+        setTarget = true;
+    }
+
+    void MoveTowardsTarget() 
+    {
+        float currentXPosition = transform.position.x;
+        Vector2 targetPosition = target.transform.position;
         //Get the difference.
-        if(offset.magnitude > .1f) 
+        if(Math.Abs(currentXPosition - targetPosition.x) > .1f) 
         {
-            offset = offset.normalized * speed;
-            rg.velocity = offset * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            return;
         }
         else
         {
+            rg.velocity = Vector2.zero;
             Explode();
+            return;
         }
     }
 
