@@ -26,7 +26,7 @@ public class StretchObject : MonoBehaviour
     void UpdateTransformForScale()
     {
         float distance = StartObject.transform.position.x - EndObject.transform.position.x;
-        transform.localScale = new Vector3(distance/2, 1, 0);
+        transform.localScale = new Vector3(distance/5, 1, 0);
 
         Vector3 middlePoint = (StartObject.transform.position + EndObject.transform.position) / 2;
         transform.position = middlePoint;
