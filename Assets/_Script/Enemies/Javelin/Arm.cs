@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Arm : MonoBehaviour
 {
+    // Should add collider to line? https://www.youtube.com/watch?v=BfP0KyOxVWs
     LineRenderer line;
     [SerializeField] private Transform startPoint, endPoint; 
 
