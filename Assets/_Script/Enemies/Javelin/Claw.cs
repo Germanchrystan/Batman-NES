@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Claw : MonoBehaviour
 {
-    public float advanceSpeed = 100f;
-    public float retractSpeed = 200f;
+    private float advanceSpeed = 90f;
     private Rigidbody2D rg;
 
     // Claw state
@@ -17,17 +16,20 @@ public class Claw : MonoBehaviour
     // Idle timer
     private float currentTimer = 0f;
     private int currentTimerListPosition = 0;
-    private float[] timerList = { 10f,10f,10f,2f,2f };
+    private float[] timerList = { 2f,2f,2f,.5f,.5f };
     // Advance Timer
     private float currentAdvanceTimer = 0f;
-    private float advanceTimer = 3f;
+    private float advanceTimer = .5f;
     public Transform startPoint;
     // Facing direction
     public bool facingLeft;
     private int direction;
+    // Endpoint
+    public Transform endpoint;
 
     void Awake()
     {
+        facingLeft = true;
         direction = facingLeft ? -1 : 1;
         rg = GetComponent<Rigidbody2D>();
     }
@@ -37,12 +39,12 @@ public class Claw : MonoBehaviour
         if(currentState == IDLE_STATE)
         {
             currentTimer -= Time.deltaTime;
-        }
-        if(currentTimer <= 0f)
-        {
-            SetNewTimer();
-            SetState(ADVANCE_STATE);
-            currentAdvanceTimer = advanceTimer;
+            if(currentTimer <= 0f)
+            {
+                SetNewTimer();
+                SetState(ADVANCE_STATE);
+                currentAdvanceTimer = advanceTimer;
+            }
         }
         // Advance
         if (currentState == ADVANCE_STATE)
@@ -50,17 +52,19 @@ public class Claw : MonoBehaviour
             currentAdvanceTimer -= Time.deltaTime;
             if(currentAdvanceTimer <= 0f)
             {
+                currentAdvanceTimer = advanceTimer;
                 SetState(RETRACT_STATE);
-                currentAdvanceTimer = 0f;
             }
         }
 
         if (currentState == RETRACT_STATE)
         {
-            if(Math.Abs(transform.position.x - startPoint.position.x) > .1f)
+            currentAdvanceTimer -= Time.deltaTime;
+            if(currentAdvanceTimer <= 0f)
             {
+                currentAdvanceTimer = 0;
                 SetState(IDLE_STATE);
-            } 
+            }
         }
     }
 
@@ -68,11 +72,13 @@ public class Claw : MonoBehaviour
     {
         if(currentState == ADVANCE_STATE)
         {
-			rg.velocity += new Vector2(direction * advanceSpeed, rg.velocity.y) * Time.deltaTime;
+			rg.velocity = new Vector2(direction * advanceSpeed, rg.velocity.y);
         }
         else if (currentState == RETRACT_STATE)
         {
-            rg.velocity += new Vector2((- 1) * (direction) * retractSpeed, rg.velocity.y) * Time.deltaTime;
+            if (Math.Abs(endpoint.position.x - transform.position.x) > .2f) {
+                rg.velocity = new Vector2((- 1) * (direction) * advanceSpeed, rg.velocity.y);
+            }
         }
         else
         {
@@ -96,10 +102,5 @@ public class Claw : MonoBehaviour
             currentTimerListPosition++;
         }
         currentTimer = timerList[currentTimerListPosition];
-    }
-
-    void Advance()
-    {
-        
     }
 }
