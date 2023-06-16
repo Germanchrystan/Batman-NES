@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Claw : MonoBehaviour
 {
-    private float advanceSpeed = 90f;
+    private float advanceSpeed = 100f;
     private Rigidbody2D rg;
 
     // Claw state
@@ -16,7 +16,7 @@ public class Claw : MonoBehaviour
     // Idle timer
     private float currentTimer = 0f;
     private int currentTimerListPosition = 0;
-    private float[] timerList = { 2f,2f,2f,.5f,.5f };
+    private float[] timerList = { 1f,.5f,.5f,.15f,.15f };
     // Advance Timer
     private float currentAdvanceTimer = 0f;
     private float advanceTimer = .5f;
