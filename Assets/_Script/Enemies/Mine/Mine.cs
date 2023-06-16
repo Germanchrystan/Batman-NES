@@ -85,6 +85,7 @@ public class Mine : MonoBehaviour
         setTarget = true;
     }
 
+    // TODO: Decouple to a separate script, in order to be used with other game objects (Javelin) 
     void MoveTowardsTarget() 
     {
         float currentXPosition = transform.position.x;
