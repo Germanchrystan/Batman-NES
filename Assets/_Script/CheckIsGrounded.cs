@@ -20,7 +20,11 @@ public class CheckIsGrounded : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if(wallCheck != null)
+        if(wallCheck == null)
+        {
+            wallCheck = transform.Find("WallCheck");
+        }
+        else
         {
             touchedWall = Physics2D.OverlapCircle(wallCheck.position, groundCheckRadius, groundLayer);
         }

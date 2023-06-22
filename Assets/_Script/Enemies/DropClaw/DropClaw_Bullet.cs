@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(CheckIsGrounded))]
+[RequireComponent(typeof(AnimationStateChanger))]
 public class DropClaw_Bullet : MonoBehaviour
 {
     private Rigidbody2D rg;
@@ -18,16 +19,22 @@ public class DropClaw_Bullet : MonoBehaviour
     // State
     private const string DROPPING = "Dropping";
     private const string GROUNDED = "Grounded";
+    private const string EXPLODE = "Explode";
     private string currentState = DROPPING;
+    // Animation
+	private Animator animator;
+    private AnimationStateChanger animationStateChanger;
     void Awake()
     {
         checkIsGrounded = GetComponent<CheckIsGrounded>();
         rg = GetComponent<Rigidbody2D>();
+        animator=GetComponent<Animator>();
+        animationStateChanger=GetComponent<AnimationStateChanger>();
         
         // Setting wall check based on the direction
         wallCheck= new GameObject("WallCheck");
         wallCheck.transform.parent = this.transform;
-        wallCheck.transform.localPosition = new Vector2(6 * direction, 0);
+        wallCheck.transform.localPosition = new Vector2(10 * direction, 0);
     }
     void Update()
     {
@@ -43,9 +50,10 @@ public class DropClaw_Bullet : MonoBehaviour
         {
             groundedTimer -= Time.deltaTime;
             touchedWall = checkIsGrounded.GetTouchedWall();
+            Debug.Log(touchedWall);
             if(groundedTimer <= 0 || touchedWall)
             {
-                Destroy(this.gameObject);
+                currentState = animationStateChanger.ChangeAnimationState(animator, currentState, EXPLODE);
             }
         }
     }
