@@ -9,9 +9,9 @@ public class DropClaw : MonoBehaviour
     private AnimationStateChanger animationStateChanger;
     private const string IDLE = "Idle";
     private const string OPEN = "Open";
-    private const string currentState = IDLE;
+    private string currentState = IDLE;
     private float timerLimit = 1f;
-    private float currentTimer = timerLimit;
+    private float currentTimer = 1f;
     void Awake()
     {
         animator=GetComponent<Animator>();
@@ -22,17 +22,20 @@ public class DropClaw : MonoBehaviour
         currentTimer -= Time.deltaTime;
         if(currentTimer <= 0f)
         {   
+            currentTimer = timerLimit;
             if(currentState == IDLE){
                 currentState = animationStateChanger.ChangeAnimationState(animator, currentState, OPEN);
                 DropBullet();
             }
-            else currentState = animationStateChanger.ChangeAnimationState(animator, currentState, IDLE);
+            else {
+                currentState = animationStateChanger.ChangeAnimationState(animator, currentState, IDLE);
+            }
         }
     }
 
     public void DropBullet()
     {
         GameObject bullet = DropClawPool.Instance.RequestBullet();
-        bullet.transform.position = transform.position + Vector2.down * 0.5;
+        bullet.transform.position = transform.position + Vector3.down * 0.5f;
     }
 }

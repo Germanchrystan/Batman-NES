@@ -34,7 +34,7 @@ public class DropClawPool : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.SetActive(false);
-            bullet.DropClaw_Bullet.SetDirection(i % 2 == 0 ? - 1 : 1);
+            // bullet.DropClaw_Bullet.SetDirection(i % 2 == 0 ? - 1 : 1);
             bulletList.Add(bullet);
             bullet.transform.parent = transform;
         }
