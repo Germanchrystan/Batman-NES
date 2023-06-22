@@ -2,26 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AnimationStateChanger))]
 public class DropClaw : MonoBehaviour
 {
+    private Animator animator;
+    private AnimationStateChanger animationStateChanger;
     private const string IDLE = "Idle";
     private const string OPEN = "Open";
-    private int bulletDirection = 1;
-
-    // Start is called before the first frame update
-    void Start()
+    private const string currentState = IDLE;
+    private float timerLimit = 1f;
+    private float currentTimer = timerLimit;
+    void Awake()
     {
-        
+        animator=GetComponent<Animator>();
+        animationStateChanger=GetComponent<AnimationStateChanger>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        currentTimer -= Time.deltaTime;
+        if(currentTimer <= 0f)
+        {   
+            if(currentState == IDLE){
+                currentState = animationStateChanger.ChangeAnimationState(animator, currentState, OPEN);
+                DropBullet();
+            }
+            else currentState = animationStateChanger.ChangeAnimationState(animator, currentState, IDLE);
+        }
     }
 
-    void Instantiate()
+    public void DropBullet()
     {
-        
+        GameObject bullet = DropClawPool.Instance.RequestBullet();
+        bullet.transform.position = transform.position + Vector2.down * 0.5;
     }
 }

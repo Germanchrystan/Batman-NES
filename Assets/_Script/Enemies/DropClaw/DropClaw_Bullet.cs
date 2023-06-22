@@ -50,7 +50,6 @@ public class DropClaw_Bullet : MonoBehaviour
         {
             groundedTimer -= Time.deltaTime;
             touchedWall = checkIsGrounded.GetTouchedWall();
-            Debug.Log(touchedWall);
             if(groundedTimer <= 0 || touchedWall)
             {
                 currentState = animationStateChanger.ChangeAnimationState(animator, currentState, EXPLODE);
@@ -64,8 +63,13 @@ public class DropClaw_Bullet : MonoBehaviour
             rg.velocity = new Vector2(direction * speed, rg.velocity.y);
         }
     }
-    public void setDirection (int direction)
+    public void SetDirection (int direction)
     {
         direction = direction;
+    }
+
+    public void DestroyBullet()
+    {
+        gameObject.SetActive(false);
     }
 }
