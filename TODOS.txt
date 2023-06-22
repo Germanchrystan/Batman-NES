@@ -1,3 +1,5 @@
 Javelin
 - Get damage from player
 - Create collider for Arm (https://www.youtube.com/watch?v=BfP0KyOxVWs)
+
+- Reorganize GroundCheck and patrolling scripts 
