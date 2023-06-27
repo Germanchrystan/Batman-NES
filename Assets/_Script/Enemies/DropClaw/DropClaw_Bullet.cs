@@ -66,6 +66,7 @@ public class DropClaw_Bullet : MonoBehaviour
     public void SetDirection (int direction)
     {
         direction = direction;
+        Debug.Log(direction);
     }
 
     public void DestroyBullet()
