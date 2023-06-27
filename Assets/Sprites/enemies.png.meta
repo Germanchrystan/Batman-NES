@@ -2064,8 +2064,8 @@ TextureImporter:
         y: 153
         width: 24
         height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2085,8 +2085,8 @@ TextureImporter:
         y: 151
         width: 24
         height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.71428573}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2842,8 +2842,8 @@ TextureImporter:
       enemies_218: 469031094
       enemies_66: 83629009
       enemies_175: 503764320
-      enemies_164: -1514224729
       enemies_59: -615455370
+      enemies_164: -1514224729
       enemies_39: -1478711051
       enemies_36: 798203210
       enemies_166: -1781009140
@@ -2873,12 +2873,12 @@ TextureImporter:
       enemies_64: -799436949
       enemies_179: 674185059
       enemies_171: 787460553
-      enemies_158: 2102881555
       enemies_237: -373572135
-      enemies_162: 1492245808
       enemies_107: 1316645360
-      enemies_132: 331570170
+      enemies_162: 1492245808
       enemies_117: -211476766
+      enemies_132: 331570170
+      enemies_158: 2102881555
       enemies_113: -711770230
       enemies_2: 1091061818
       enemies_258: 1547898711
