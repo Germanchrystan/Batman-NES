@@ -40,7 +40,7 @@ public class DropClaw : MonoBehaviour
     public void DropBullet()
     {
         GameObject bullet = dropClawPool.RequestBullet(currentPoolBullet);
-        if(bullet != null) bullet.transform.position = transform.position + Vector3.down * 1f;
+        if(bullet != null) bullet.transform.position = transform.position + Vector3.down * .5f;
         if ((currentPoolBullet + 1) < 2) currentPoolBullet++;
         else currentPoolBullet = 0;
     }
