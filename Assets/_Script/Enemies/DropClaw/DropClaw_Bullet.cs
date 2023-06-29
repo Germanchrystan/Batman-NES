@@ -10,7 +10,7 @@ public class DropClaw_Bullet : MonoBehaviour
     private bool isGrounded;
     private CheckIsGrounded checkIsGrounded;
     // Movement
-    private int direction = 1;
+    [SerializeField] private int direction;
     private float groundedTimer = 1f;
     /*[SerializeField]*/ private float speed = 150f;
     // Checking wall
@@ -46,7 +46,7 @@ public class DropClaw_Bullet : MonoBehaviour
                 currentState = GROUNDED;
             }
         }
-        if(currentState == GROUNDED)
+        if(currentState == GROUNDED && gameObject.activeSelf)
         {
             groundedTimer -= Time.deltaTime;
             touchedWall = checkIsGrounded.GetTouchedWall();
@@ -62,13 +62,29 @@ public class DropClaw_Bullet : MonoBehaviour
         {
             rg.velocity = new Vector2(direction * speed, rg.velocity.y);
         }
+        else
+        {
+            rg.velocity = new Vector2(0f, rg.velocity.y);
+        }
+
     }
-    public void SetDirection (int direction)
+    public void SetDirection (int setDirection)
     {
-        direction = direction;
-        Debug.Log(direction);
+        Debug.Log(setDirection);
+        direction = setDirection;
     }
 
+    void OnDisable()
+    {   
+        currentState = DROPPING;
+        groundedTimer = 1f;
+    }
+
+    void OnEnable()
+    {
+        currentState = DROPPING;
+        groundedTimer = 1f;
+    }
     public void DestroyBullet()
     {
         gameObject.SetActive(false);

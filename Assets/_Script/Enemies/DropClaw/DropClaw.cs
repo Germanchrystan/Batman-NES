@@ -12,6 +12,7 @@ public class DropClaw : MonoBehaviour
     private string currentState = IDLE;
     private float timerLimit = 1f;
     private float currentTimer = 2f;
+    private int currentPoolBullet = 0;
 
     private DropClawPool dropClawPool;
     void Awake()
@@ -38,7 +39,9 @@ public class DropClaw : MonoBehaviour
 
     public void DropBullet()
     {
-        GameObject bullet = dropClawPool.RequestBullet();
-        if(bullet != null) bullet.transform.position = transform.position + Vector3.down * 0.5f;
+        GameObject bullet = dropClawPool.RequestBullet(currentPoolBullet);
+        if(bullet != null) bullet.transform.position = transform.position + Vector3.down * 1f;
+        if ((currentPoolBullet + 1) < 2) currentPoolBullet++;
+        else currentPoolBullet = 0;
     }
 }

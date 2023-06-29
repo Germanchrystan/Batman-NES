@@ -4903,6 +4903,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3381417920878809170, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3381417920878809173, guid: 4dc4830a72a05d04b9c1af881b60d759, type: 3}
       propertyPath: m_Size.y
       value: 21.367722
@@ -5093,6 +5097,10 @@ PrefabInstance:
     - target: {fileID: 4454745033017188845, guid: a3c35a472332bab46899101c159c09e2, type: 3}
       propertyPath: m_Name
       value: NightSlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454745033017188845, guid: a3c35a472332bab46899101c159c09e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4454745033017188846, guid: a3c35a472332bab46899101c159c09e2, type: 3}
       propertyPath: m_Size.x
@@ -5453,6 +5461,10 @@ PrefabInstance:
     - target: {fileID: 7096152419929215691, guid: 5852cb15480d8d94386ecf24e173faaf, type: 3}
       propertyPath: m_Name
       value: Mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096152419929215691, guid: 5852cb15480d8d94386ecf24e173faaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5852cb15480d8d94386ecf24e173faaf, type: 3}

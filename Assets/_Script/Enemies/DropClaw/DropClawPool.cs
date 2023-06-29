@@ -6,6 +6,7 @@ public class DropClawPool : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     private int poolSize = 2;
+    private int currentPoolBullet = 0;
     private List<GameObject> bulletList = new List <GameObject>();
 
     private static DropClawPool instance;
@@ -37,21 +38,19 @@ public class DropClawPool : MonoBehaviour
             bulletList.Add(bullet);
             bullet.transform.parent = transform;
             // Setting direction for bullet
-            int bulletDirection = i % 2 == 0 ? - 1 : 1;
+            int bulletDirection = i % 2 == 0 ? -1 : 1;
             DropClaw_Bullet dropClawBulletScript = bullet.GetComponent<DropClaw_Bullet>();
             if(dropClawBulletScript != null) dropClawBulletScript.SetDirection(bulletDirection);
         }
     }
 
-    public GameObject RequestBullet()
+    public GameObject RequestBullet(int currentPoolBullet)
     {
-        for(int i = 0; i < bulletList.Count; i++)
+        Debug.Log(currentPoolBullet);
+        if(!bulletList[currentPoolBullet].activeSelf)
         {
-            if(!bulletList[i].activeSelf)
-            {
-                bulletList[i].SetActive(true);
-                return bulletList[i];
-            }
+            bulletList[currentPoolBullet].SetActive(true);
+            return bulletList[currentPoolBullet];
         }
         return null;
     }
