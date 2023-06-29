@@ -70,7 +70,6 @@ public class DropClaw_Bullet : MonoBehaviour
     }
     public void SetDirection (int setDirection)
     {
-        Debug.Log(setDirection);
         direction = setDirection;
     }
 
