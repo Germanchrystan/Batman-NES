@@ -7,7 +7,7 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] private GameObject ammoPrefab;
     [SerializeField] private GameObject heartPrefab;
 
-    private const string poolSize = 9;
+    private const int poolSize = 9;
     string[] poolOrder = new string[] { "heart", "ammo", null };
     private List<GameObject> powerUpList = new List <GameObject>();
     private static PowerUpSpawner instance;
