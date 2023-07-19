@@ -30,11 +30,13 @@ public class DropClaw_Bullet : MonoBehaviour
         rg = GetComponent<Rigidbody2D>();
         animator=GetComponent<Animator>();
         animationStateChanger=GetComponent<AnimationStateChanger>();
-        
+    }
+    void Start()
+    {
         // Setting wall check based on the direction
         wallCheck= new GameObject("WallCheck");
         wallCheck.transform.parent = this.transform;
-        wallCheck.transform.localPosition = new Vector2(10 * direction, 0);
+        wallCheck.transform.localPosition = new Vector2(direction * 10, 0);
     }
     void Update()
     {
@@ -87,5 +89,10 @@ public class DropClaw_Bullet : MonoBehaviour
     public void DestroyBullet()
     {
         gameObject.SetActive(false);
+    }
+
+    public void GetDamage(int damageAmount)
+    {
+        animationStateChanger.ChangeAnimationState(animator, currentState, EXPLODE);
     }
 }
