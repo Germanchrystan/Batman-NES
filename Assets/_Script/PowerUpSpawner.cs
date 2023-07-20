@@ -38,6 +38,7 @@ public class PowerUpSpawner : MonoBehaviour
             if(i > 0 && i % 3 == 0) powerUpIndex++;
             GameObject powerUp = InstantiatePowerUp(poolOrder[powerUpIndex]);
             powerUp.SetActive(false);
+            powerUpList.Add(powerUp);
             powerUp.transform.parent = transform;
         }
     }
@@ -57,7 +58,7 @@ public class PowerUpSpawner : MonoBehaviour
 
     static public void RequestPowerUp(Transform gameObjectTransform)
     {
-        int randomInt = Random.Range(0, 10);
+        int randomInt = Random.Range(0, poolSize);
         if(powerUpList[randomInt].name != "null")
         {
             GameObject powerUpSelected = powerUpList[randomInt];
