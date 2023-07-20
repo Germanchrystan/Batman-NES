@@ -66,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
     }
 
-    public void AddHealth()
+    public void GetHealth()
     {
         currentHealth = currentHealth + 1;
 

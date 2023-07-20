@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -437,6 +438,11 @@ public class PlayerMovement:MonoBehaviour
 		FireComplete();
 		canMove = true;
 	}
+
+	public void GetAmmo()
+	{
+		ammo = Math.Min(ammo, ammo + 10);
+	} 
 
 	void switchWeapon()
 	{

@@ -38,4 +38,9 @@ public class CheckIsGrounded : MonoBehaviour
     {
         return touchedWall;
     }
+
+    void OnEnable(){
+        isGrounded = false;
+        touchedWall = false;
+    }
 }
