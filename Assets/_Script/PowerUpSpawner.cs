@@ -9,7 +9,7 @@ public class PowerUpSpawner : MonoBehaviour
 
     private const int poolSize = 9;
     string[] poolOrder = new string[] { "heart", "ammo", null };
-    private List<GameObject> powerUpList = new List <GameObject>();
+    private static List<GameObject> powerUpList = new List <GameObject>();
     private static PowerUpSpawner instance;
     public static PowerUpSpawner Instance { get { return instance; }}
 
@@ -26,53 +26,48 @@ public class PowerUpSpawner : MonoBehaviour
     }
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        AddPowerUpsToPool();
     }
 
     private void AddPowerUpsToPool()
     {
         int powerUpIndex = 0;
 
-        for(int i; i < poolSize; i++)
+        for(int i = 0; i < poolSize; i++)
         {
             if(i > 0 && i % 3 == 0) powerUpIndex++;
             GameObject powerUp = InstantiatePowerUp(poolOrder[powerUpIndex]);
             powerUp.SetActive(false);
-            bullet.transform.parent = transform;
+            powerUp.transform.parent = transform;
         }
     }
 
-    private GameObject InstantiatePowerUp(int powerUpIndex)
+    private GameObject InstantiatePowerUp(string powerUpType)
     {
-        switch(powerUpIndex) {
+        switch(powerUpType) {
             case "heart":
-                GameObject powerUp = Instantiate(heartPrefab);
-                return powerUp;
-                break;
+                return Instantiate(heartPrefab);
             case "ammo":
-                GameObject powerUp = Instantiate(ammoPrefab);
-                return powerUp;
-                break;
-            case default:
-                return null;
+                return Instantiate(ammoPrefab);
+            default:
+                GameObject none = new GameObject("null");
+                return none;
         }
     }
 
     static public void RequestPowerUp(Transform gameObjectTransform)
     {
-        Random r = new Random();
-        int randomInt = r.Next(0, poolSize);
-        if(powerUpList[randomInt] != null)
+        int randomInt = Random.Range(0, 10);
+        if(powerUpList[randomInt].name != "null")
         {
             GameObject powerUpSelected = powerUpList[randomInt];
             powerUpSelected.SetActive(true);
-            powerUpSelected.transform.parent = gameObjectTransform;
+            powerUpSelected.transform.position = gameObjectTransform.position;
         }
-    } 
+    }
+    static public void DestroyPowerUp(GameObject powerUp)
+    {
+        powerUp.SetActive(false);
+        // powerUp.transform.parent = transform;
+    }
 }
