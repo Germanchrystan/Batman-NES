@@ -88,6 +88,7 @@ public class DropClaw_Bullet : MonoBehaviour
     }
     public void DestroyBullet()
     {
+        PowerUpSpawner.RequestPowerUp(gameObject.transform);
         gameObject.SetActive(false);
     }
 
