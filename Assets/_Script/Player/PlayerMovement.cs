@@ -441,7 +441,7 @@ public class PlayerMovement:MonoBehaviour
 
 	public void GetAmmo()
 	{
-		ammo = Math.Min(ammo, ammo + 10);
+		ammo = Math.Min(99, ammo + 10);
 	} 
 
 	void switchWeapon()

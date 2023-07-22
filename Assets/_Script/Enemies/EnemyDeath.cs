@@ -6,6 +6,7 @@ public class EnemyDeath : MonoBehaviour
 {    
     public void Death()
     {
+        PowerUpSpawner.RequestPowerUp(gameObject.transform);
         Destroy(this.gameObject);
     }
 }
