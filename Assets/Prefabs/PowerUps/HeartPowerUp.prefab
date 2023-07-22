@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4976369004624460838}
   - component: {fileID: 4976369004624460837}
   - component: {fileID: 4976369004624460836}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: HeartPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
