@@ -63,7 +63,6 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = 0;
             }
         }
-        Debug.Log("DAMAGED, you now have: " + currentHealth + " lives");
     }
 
     public void GetHealth()

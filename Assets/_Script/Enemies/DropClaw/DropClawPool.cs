@@ -46,7 +46,6 @@ public class DropClawPool : MonoBehaviour
 
     public GameObject RequestBullet(int currentPoolBullet)
     {
-        Debug.Log(currentPoolBullet);
         if(!bulletList[currentPoolBullet].activeSelf)
         {
             bulletList[currentPoolBullet].SetActive(true);
