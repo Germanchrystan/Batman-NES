@@ -23,7 +23,7 @@ public class DropClawPool : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         AddBulletsToPool(poolSize);
@@ -46,7 +46,6 @@ public class DropClawPool : MonoBehaviour
 
     public GameObject RequestBullet(int currentPoolBullet)
     {
-        Debug.Log(currentPoolBullet);
         if(!bulletList[currentPoolBullet].activeSelf)
         {
             bulletList[currentPoolBullet].SetActive(true);

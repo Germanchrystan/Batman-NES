@@ -2,4 +2,6 @@ Javelin
 - Get damage from player
 - Create collider for Arm (https://www.youtube.com/watch?v=BfP0KyOxVWs)
 
-- Reorganize GroundCheck and patrolling scripts 
+- Reorganize GroundCheck and patrolling scripts
+- Stop using CheckSurrounding script. NightSlayer is still using it. 
+Should move to FrontCheck and GroundCheck scripts
