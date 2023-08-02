@@ -56,6 +56,7 @@ public class EnemyPrefabPool : MonoBehaviour
             returnedInstance.SetActive(true);
             return returnedInstance;
         }
+        // IncreasePoolIndex();
         return null;
     }
 

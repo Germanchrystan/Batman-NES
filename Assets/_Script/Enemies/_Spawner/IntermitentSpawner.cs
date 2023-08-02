@@ -6,7 +6,7 @@ public class IntermitentSpawner : MonoBehaviour
 {
 
     private GameObject spawnerPoint;
-    public EnemyPrefabPool enemyPrefabPool;
+    private EnemyPrefabPool enemyPrefabPool;
     private float timeBetweenSpawns = 1f;
     private float currentTimer;
 
@@ -35,6 +35,5 @@ public class IntermitentSpawner : MonoBehaviour
     private void Spawn()
     {
         GameObject enemyInstance = enemyPrefabPool.RequestPrefabInstance();
-        if(enemyInstance != null) enemyInstance.transform.position = spawnerPoint.transform.position;
     }
 }
