@@ -7,11 +7,12 @@ public class RunThroughScreen : MonoBehaviour
     private Rigidbody2D rg;
 
     [SerializeField] private int direction = -1;
+    //[SerializeField]
     private float speed = 150f;
-    public RunThroughScreen(int direction)
-    {
-        this.direction = direction;
-    }
+    // public RunThroughScreen(int direction)
+    // {
+    //     this.direction = direction;
+    // }
     void Awake()
     {
         rg = GetComponent<Rigidbody2D>();

@@ -6,9 +6,11 @@ using UnityEngine;
 public class EnemyPrefabSpawnSO : ScriptableObject
 {
     public GameObject Enemy;
+    public int poolSize;
 
-    public EnemyPrefabSpawnSO(GameObject Enemy)
+    public EnemyPrefabSpawnSO(GameObject Enemy, int poolSize)
     {
         this.Enemy = Enemy;
+        this.poolSize = poolSize;
     }
 }
