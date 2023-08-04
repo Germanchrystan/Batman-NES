@@ -290,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.6, y: 1}
+    m_SensorSize: {x: 1.5995575, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -606,7 +606,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.269648, y: 58.921494, z: 141.2513}
+  m_LocalPosition: {x: 12.218966, y: 58.921684, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1814,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630682662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200, y: 0, z: 0}
+  m_LocalPosition: {x: 200, y: 37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4843,6 +4843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2034706427}
   - component: {fileID: 2034706426}
+  - component: {fileID: 2034706428}
   m_Layer: 0
   m_Name: ShakedownSpawner
   m_TagString: Untagged
@@ -4862,8 +4863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9137c610edd3a4f980bae26deb62fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabSpawnSO: {fileID: 11400000, guid: 9bdb9237c520204468c0692872e2840e, type: 2}
-  spawnPoint: {fileID: 1630682663}
+  enemyPrefabPool: {fileID: 0}
 --- !u!4 &2034706427
 Transform:
   m_ObjectHideFlags: 0
@@ -4872,7 +4872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034706425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.854412, y: 59, z: -1.3007793}
+  m_LocalPosition: {x: 13.854412, y: 59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4880,6 +4880,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034706428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034706425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a630037212f75354a85e2dc919477299, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabSpawnSO: {fileID: 11400000, guid: 9bdb9237c520204468c0692872e2840e, type: 2}
+  spawnerPointTransform: {fileID: 0}
 --- !u!1001 &1487792510069724884
 PrefabInstance:
   m_ObjectHideFlags: 0
