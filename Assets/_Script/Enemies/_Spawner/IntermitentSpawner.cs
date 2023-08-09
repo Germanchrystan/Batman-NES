@@ -9,6 +9,8 @@ public class IntermitentSpawner : MonoBehaviour
     private float timeBetweenSpawns = 1f;
     private float currentTimer;
 
+    private bool canSpawn;
+
     void Awake()
     {
         spawnerPoint = gameObject.transform.Find("SpawnerPoint").gameObject;
