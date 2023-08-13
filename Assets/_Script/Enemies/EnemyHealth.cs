@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class EnemyHealth : MonoBehaviour
     private bool canGetHit = true;
     public float invisibilityInterval = 0.5f;
     public int currentHealth = 3;
+
+    [SerializeField] private UnityEvent triggerDamageEvent;
+    [SerializeField] private UnityEvent triggerDeathEvent;
 
     void Awake()
     {
@@ -41,11 +45,13 @@ public class EnemyHealth : MonoBehaviour
     {
        if (canGetHit)
         {
+            triggerDamageEvent.Invoke();
             currentHealth = currentHealth - damageAmount;
             StartCoroutine(InvisibilityFrame());
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
+                triggerDeathEvent.Invoke();
             }
         }
     }

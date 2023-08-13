@@ -11,8 +11,8 @@ public class EnemyLateralMovement : MonoBehaviour
     [SerializeField] private Flip flip;
 
     // Transforms
-    public Transform frontCheck;
-    public Transform groundCheck;
+    private Transform frontCheck;
+    private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     
     // Values
@@ -24,6 +24,7 @@ public class EnemyLateralMovement : MonoBehaviour
     Vector2 rayCastDirection;
     RaycastHit2D frontHitInfo;
     private bool shouldFlip;
+    private bool canMove = true;
 
     void Awake()
     {
@@ -34,12 +35,10 @@ public class EnemyLateralMovement : MonoBehaviour
             groundCheck = gameObject.transform.Find("GroundCheck").gameObject.transform;
         }
     }
-
     void Start()
     {
-        flip = Flip.Instance;
+        flip =  GetComponent<Flip>();
     }
-
     void Update()
     {
        shouldFlip = ShouldFlip();
@@ -49,12 +48,17 @@ public class EnemyLateralMovement : MonoBehaviour
             direction *= -1;
        }
     }
-
     void FixedUpdate()
     {
-        rg.velocity = new Vector2(direction * lateralSpeedSO.speed, rg.velocity.y);
+        if(canMove)
+        {
+            rg.velocity = new Vector2(direction * lateralSpeedSO.speed, rg.velocity.y);
+        }
+        else
+        {
+            rg.velocity = new Vector2(0, rg.velocity.y);
+        }
     }
-
     public bool ShouldFlip()
 	{
         if(shouldGroundCheckSO.shouldGroundCheck)
@@ -68,5 +72,15 @@ public class EnemyLateralMovement : MonoBehaviour
         rayCastDirection = direction < 0 ? Vector2.left : Vector2.right;
         frontHitInfo = Physics2D.Raycast(frontCheck.position, rayCastDirection, frontCheckDistance, groundLayer);
         return !frontGroundCheck ||  frontHitInfo.collider != null;
+    }
+    public void InvokeStopMovement()
+    {
+        StartCoroutine(StopMovement());
+    }
+    IEnumerator StopMovement()
+    {
+        canMove = false;
+        yield return new WaitForSeconds(1f);
+        canMove = true;
     }
 }

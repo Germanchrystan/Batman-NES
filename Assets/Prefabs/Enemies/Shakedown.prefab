@@ -103,11 +103,13 @@ GameObject:
   - component: {fileID: 1487792510241602979}
   - component: {fileID: 1487792510241602989}
   - component: {fileID: 1487792510241602990}
-  - component: {fileID: 1487792510241602988}
   - component: {fileID: 1487792510241602984}
   - component: {fileID: 1487792510241602991}
   - component: {fileID: 1487792510241602985}
   - component: {fileID: 1365540261736967207}
+  - component: {fileID: -4920758705863275602}
+  - component: {fileID: 688065531413782780}
+  - component: {fileID: 7525315219348135397}
   m_Layer: 3
   m_Name: Shakedown
   m_TagString: Untagged
@@ -264,19 +266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efacbfeb077326b46bec6614a97080dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1487792510241602988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1487792510241602983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6772ecf8b4916c14d9445b5ab2d94d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: -1
 --- !u!114 &1487792510241602984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +282,48 @@ MonoBehaviour:
   hittedColor: {r: 0.8, g: 0.3, b: 0.05, a: 1}
   invisibilityInterval: 0.5
   currentHealth: 3
+  triggerDamageEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 688065531413782780}
+        m_TargetAssemblyTypeName: EnemyLateralMovement, Assembly-CSharp
+        m_MethodName: InvokeStopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7525315219348135397}
+        m_TargetAssemblyTypeName: StopAnimationSpeed, Assembly-CSharp
+        m_MethodName: InvokeStopAnimation
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1487792510241602976}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Death
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1487792510241602991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +364,49 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &-4920758705863275602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487792510241602983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a45b14ad091c408f9eb81caa26373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &688065531413782780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487792510241602983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1466c237908f0b446b2886e6fb1d453a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: -1
+  lateralSpeedSO: {fileID: 11400000, guid: 412d502ec4a14034ba25c36b9524036b, type: 2}
+  shouldGroundCheckSO: {fileID: 11400000, guid: 0a33fc2f6ff406b4aa52aad2e6e12a05, type: 2}
+  flip: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &7525315219348135397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487792510241602983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbd30455f084d34ab583d9f839c4ccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487792510261001657
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ public class IntermitentSpawner : MonoBehaviour
 {
     private GameObject spawnerPoint;
     public EnemyPrefabPool enemyPrefabPool;
-    private float timeBetweenSpawns = 1f;
+    [SerializeField] IntermittentSpawnerTimerSO intermittentSpawnerTimerSO;
+    private float timeBetweenSpawns;
     private float currentTimer;
 
     private bool canSpawn;
@@ -14,11 +15,12 @@ public class IntermitentSpawner : MonoBehaviour
     void Awake()
     {
         spawnerPoint = gameObject.transform.Find("SpawnerPoint").gameObject;
-        currentTimer = timeBetweenSpawns;
     }
     void Start()
     {
         enemyPrefabPool = EnemyPrefabPool.Instance;
+        timeBetweenSpawns = intermittentSpawnerTimerSO.timer;
+        currentTimer = timeBetweenSpawns;
     }
     void Update()
     {

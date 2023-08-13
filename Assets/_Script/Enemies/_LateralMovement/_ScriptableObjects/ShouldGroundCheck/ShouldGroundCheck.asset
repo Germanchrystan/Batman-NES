@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f2e190dd1797c4197f274b782def72, type: 3}
+  m_Script: {fileID: 11500000, guid: e58bb4488f28a6744a6414bb81a59694, type: 3}
   m_Name: ShouldGroundCheck
   m_EditorClassIdentifier: 
   shouldGroundCheck: 1

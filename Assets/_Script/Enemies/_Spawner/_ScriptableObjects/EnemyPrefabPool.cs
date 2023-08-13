@@ -55,6 +55,7 @@ public class EnemyPrefabPool : MonoBehaviour
         {
             GameObject returnedInstance = poolList[currentPoolIndex];
             IncreasePoolIndex();
+            returnedInstance.transform.localPosition = new Vector3(0, 0, 0);
             returnedInstance.SetActive(true);
             return returnedInstance;
         }

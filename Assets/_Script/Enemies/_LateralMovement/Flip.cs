@@ -4,21 +4,6 @@ using UnityEngine;
 
 public class Flip : MonoBehaviour
 {
-	private static Flip instance;
-	public static Flip Instance { get { return instance; }}
-
-	private void Awake()
-	{
-		if(instance == null)
-		{
-			instance = this;
-		}
-		else
-		{
-			Destroy(gameObject);
-		}
-	}
-
 	public bool performFlip(bool facingLeft, int direction)
 	{
 		float localScaleX = transform.localScale.x; //Obtenemos la escala del personaje en X
