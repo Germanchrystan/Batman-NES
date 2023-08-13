@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdf606121353b2940bb2abf148e4cf7f, type: 3}
-  m_Name: ShakeDownSO
+  m_Script: {fileID: 11500000, guid: e58bb4488f28a6744a6414bb81a59694, type: 3}
+  m_Name: ShouldGroundCheck
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1487792510241602983, guid: e02610b18b5cda9439e8c229519f0814, type: 3}
-  poolSize: 1
+  shouldGroundCheck: 1

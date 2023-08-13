@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class IntermitentSpawner : MonoBehaviour
 {
-
     private GameObject spawnerPoint;
-    private EnemyPrefabPool enemyPrefabPool;
-    private float timeBetweenSpawns = 1f;
+    public EnemyPrefabPool enemyPrefabPool;
+    [SerializeField] IntermittentSpawnerTimerSO intermittentSpawnerTimerSO;
+    private float timeBetweenSpawns;
     private float currentTimer;
+
+    private bool canSpawn;
 
     void Awake()
     {
-        enemyPrefabPool = EnemyPrefabPool.Instance;
         spawnerPoint = gameObject.transform.Find("SpawnerPoint").gameObject;
+    }
+    void Start()
+    {
+        enemyPrefabPool = EnemyPrefabPool.Instance;
+        timeBetweenSpawns = intermittentSpawnerTimerSO.timer;
         currentTimer = timeBetweenSpawns;
     }
-
     void Update()
     {
         if(spawnerPoint.activeSelf)
@@ -29,9 +34,6 @@ public class IntermitentSpawner : MonoBehaviour
             }
         }
     }
-
-
-
     private void Spawn()
     {
         GameObject enemyInstance = enemyPrefabPool.RequestPrefabInstance();

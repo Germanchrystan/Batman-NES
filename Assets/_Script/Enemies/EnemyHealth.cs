@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -15,12 +16,22 @@ public class EnemyHealth : MonoBehaviour
     public float invisibilityInterval = 0.5f;
     public int currentHealth = 3;
 
+    [SerializeField] private UnityEvent triggerDamageEvent;
+    [SerializeField] private UnityEvent triggerDeathEvent;
+
     void Awake()
     {
         // animator = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         enemyHitBox = GetComponent<EnemyHitBox>();
         normalColor = renderer.color;
+    }
+
+    void OnEnable()
+    {
+        canGetHit = true;
+        currentHealth = 3;
+        enemyHitBox.ActivateHitBoxes();
     }
 
     void LateUpdate()
@@ -42,10 +53,16 @@ public class EnemyHealth : MonoBehaviour
        if (canGetHit)
         {
             currentHealth = currentHealth - damageAmount;
-            StartCoroutine(InvisibilityFrame());
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
+                enemyHitBox.DeactivateHitBoxes();
+                triggerDeathEvent.Invoke();
+            }
+            else
+            {
+                triggerDamageEvent.Invoke();
+                StartCoroutine(InvisibilityFrame());
             }
         }
     }

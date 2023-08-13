@@ -15,8 +15,9 @@ public class EnemyPrefabPool : MonoBehaviour
     private static EnemyPrefabPool instance;
     public static EnemyPrefabPool Instance { get { return instance; }}
 
+    public Transform spawnerPointTransform;
 
-    void Awake()
+    private void Awake()
     {
         if(instance == null)
         {
@@ -26,15 +27,15 @@ public class EnemyPrefabPool : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+    }
+    void Start()
+    {
         if(enemyPrefabSpawnSO != null)
         {
             enemyPrefab = enemyPrefabSpawnSO.Enemy;
             poolSize = enemyPrefabSpawnSO.poolSize;
         }
-    }
-    void Start()
-    {
+        spawnerPointTransform = gameObject.transform.Find("SpawnerPoint").gameObject.transform;
         AddInstancesToPool(poolSize);
     }
     public void AddInstancesToPool(int poolSize)
@@ -44,7 +45,8 @@ public class EnemyPrefabPool : MonoBehaviour
             GameObject prefabInstance = Instantiate(enemyPrefab);
             prefabInstance.SetActive(false);
             poolList.Add(prefabInstance);
-            prefabInstance.transform.parent = transform;
+            prefabInstance.transform.parent = spawnerPointTransform;
+            prefabInstance.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
     public GameObject RequestPrefabInstance()
@@ -53,13 +55,13 @@ public class EnemyPrefabPool : MonoBehaviour
         {
             GameObject returnedInstance = poolList[currentPoolIndex];
             IncreasePoolIndex();
+            returnedInstance.transform.localPosition = new Vector3(0, 0, 0);
             returnedInstance.SetActive(true);
             return returnedInstance;
         }
         // IncreasePoolIndex();
         return null;
     }
-
     private void IncreasePoolIndex()
     {
         currentPoolIndex = currentPoolIndex + 1 == poolSize ? 0 : currentPoolIndex + 1; 
