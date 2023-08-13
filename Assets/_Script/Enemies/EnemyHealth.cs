@@ -27,6 +27,13 @@ public class EnemyHealth : MonoBehaviour
         normalColor = renderer.color;
     }
 
+    void OnEnable()
+    {
+        canGetHit = true;
+        currentHealth = 3;
+        enemyHitBox.ActivateHitBoxes();
+    }
+
     void LateUpdate()
     {
         if(!canGetHit && currentHealth > 0)
@@ -45,13 +52,17 @@ public class EnemyHealth : MonoBehaviour
     {
        if (canGetHit)
         {
-            triggerDamageEvent.Invoke();
             currentHealth = currentHealth - damageAmount;
-            StartCoroutine(InvisibilityFrame());
             if(currentHealth <= 0)
             {
                 currentHealth = 0;
+                enemyHitBox.DeactivateHitBoxes();
                 triggerDeathEvent.Invoke();
+            }
+            else
+            {
+                triggerDamageEvent.Invoke();
+                StartCoroutine(InvisibilityFrame());
             }
         }
     }

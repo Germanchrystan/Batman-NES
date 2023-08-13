@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyLateralMovement : MonoBehaviour
 {
     private Rigidbody2D rg;
-    [SerializeField] private int direction = -1;
+
+    private int direction;
     [SerializeField] private LateralSpeedSO lateralSpeedSO;
     [SerializeField] private ShouldGroundCheckSO shouldGroundCheckSO;
+    [SerializeField] private InitialDirectionSO initialDirectionSO;
     [SerializeField] private Flip flip;
 
     // Transforms
@@ -26,6 +28,15 @@ public class EnemyLateralMovement : MonoBehaviour
     private bool shouldFlip;
     private bool canMove = true;
 
+
+    void OnEnable()
+    {
+        if(direction != 0 && direction != initialDirectionSO.direction)
+        {
+            flip.performFlip(false, -1);
+        }
+        direction = initialDirectionSO.direction;
+    }
     void Awake()
     {
         rg = GetComponent<Rigidbody2D>();
@@ -37,7 +48,7 @@ public class EnemyLateralMovement : MonoBehaviour
     }
     void Start()
     {
-        flip =  GetComponent<Flip>();
+        flip = GetComponent<Flip>();
     }
     void Update()
     {

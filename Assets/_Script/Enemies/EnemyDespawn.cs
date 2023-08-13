@@ -9,7 +9,7 @@ public class EnemyDespawn : MonoBehaviour
 
     private bool visible = true;
 
-    void onEnabled()
+    void OnEnable()
     {
         notVisibleTimer = 1f;
     }
