@@ -12,6 +12,11 @@ public class IntermitentSpawner : MonoBehaviour
 
     private bool canSpawn;
 
+    private bool _isTriggered;
+    public bool IsTriggered { get => _isTriggered; set => _isTriggered = value; }
+    private bool  _isSpawnPointVisible;
+    public bool IsSpawnPointVisible{ get => _isSpawnPointVisible; set => _isSpawnPointVisible = value; }
+
     void Awake()
     {
         spawnerPoint = gameObject.transform.Find("SpawnerPoint").gameObject;
@@ -24,7 +29,9 @@ public class IntermitentSpawner : MonoBehaviour
     }
     void Update()
     {
-        if(spawnerPoint.activeSelf)
+        Debug.Log(IsSpawnPointVisible);
+        canSpawn = IsTriggered && !IsSpawnPointVisible;
+        if(canSpawn)
         {
             currentTimer -= Time.deltaTime;
             if(currentTimer <= 0f)
@@ -37,5 +44,19 @@ public class IntermitentSpawner : MonoBehaviour
     private void Spawn()
     {
         GameObject enemyInstance = enemyPrefabPool.RequestPrefabInstance();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("SpawnTrigger"))
+        {
+           IsTriggered = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("SpawnTrigger"))
+        {
+            IsTriggered = false;
+        }
     }
 }
