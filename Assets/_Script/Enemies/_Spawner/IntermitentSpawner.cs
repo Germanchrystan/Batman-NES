@@ -29,7 +29,6 @@ public class IntermitentSpawner : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(IsSpawnPointVisible);
         canSpawn = IsTriggered && !IsSpawnPointVisible;
         if(canSpawn)
         {
