@@ -11,23 +11,9 @@ public class EnemyPrefabPool : MonoBehaviour
     // Pool
     private List<GameObject> poolList = new List<GameObject>(); 
     private int currentPoolIndex = 0;
-    // Singleton
-    private static EnemyPrefabPool instance;
-    public static EnemyPrefabPool Instance { get { return instance; }}
 
     public Transform spawnerPointTransform;
 
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
         if(enemyPrefabSpawnSO != null)
