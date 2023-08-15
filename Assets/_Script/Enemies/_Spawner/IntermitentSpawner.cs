@@ -16,14 +16,17 @@ public class IntermitentSpawner : MonoBehaviour
     public bool IsTriggered { get => _isTriggered; set => _isTriggered = value; }
     private bool  _isSpawnPointVisible;
     public bool IsSpawnPointVisible{ get => _isSpawnPointVisible; set => _isSpawnPointVisible = value; }
+    private int _spawnPointDirection = 1;
+
+    private Transform playerTransform;
 
     void Awake()
     {
         spawnerPoint = gameObject.transform.Find("SpawnerPoint").gameObject;
+        enemyPrefabPool = GetComponent<EnemyPrefabPool>();
     }
     void Start()
     {
-        enemyPrefabPool = EnemyPrefabPool.Instance;
         timeBetweenSpawns = intermittentSpawnerTimerSO.timer;
         currentTimer = timeBetweenSpawns;
     }
@@ -35,6 +38,7 @@ public class IntermitentSpawner : MonoBehaviour
             currentTimer -= Time.deltaTime;
             if(currentTimer <= 0f)
             {
+                // CheckSpawnPointDirection();
                 currentTimer = timeBetweenSpawns;
                 Spawn();
             }
@@ -57,5 +61,11 @@ public class IntermitentSpawner : MonoBehaviour
         {
             IsTriggered = false;
         }
+    }
+    void CheckSpawnPointDirection() // TODO: Use this function to set spawn position position
+    {
+        playerTransform = GameObject.FindWithTag("Player").transform;
+        float positionSubtraction = transform.position.x - playerTransform.position.x;
+        _spawnPointDirection = positionSubtraction > 0 ? 1 : -1;
     }
 }
