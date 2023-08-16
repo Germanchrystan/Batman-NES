@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class CheckSurrounding : MonoBehaviour
 {
     // Transforms
@@ -17,12 +17,26 @@ public class CheckSurrounding : MonoBehaviour
     public LayerMask groundLayer;
     public bool frontGroundCheck;
 
+    [SerializeField] private UnityEvent NotGroundedEvent;
+    private bool isGrounded;
+
     void Awake()
     {
         frontCheck = gameObject.transform.Find("FrontCheck").gameObject.transform;
         groundCheck = gameObject.transform.Find("GroundCheck").gameObject.transform;
     }
-
+    void Update()
+    {
+        IsGroundedCheck();
+    } 
+    public void IsGroundedCheck()
+    {
+        bool newIsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if(isGrounded && !newIsGrounded)
+        {
+            NotGroundedEvent.Invoke();
+        }
+    }
     public bool ShouldFlip(bool facingLeft)
 	{
 		frontGroundCheck = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

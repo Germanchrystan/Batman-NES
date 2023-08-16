@@ -26,8 +26,8 @@ public class EnemyLateralMovement : MonoBehaviour
     Vector2 rayCastDirection;
     RaycastHit2D frontHitInfo;
     private bool shouldFlip;
-    private bool canMove = true;
-
+    private bool _canMove = true;
+    public bool CanMove { get => _canMove; set => _canMove = value; }
 
     void OnEnable()
     {
@@ -36,6 +36,7 @@ public class EnemyLateralMovement : MonoBehaviour
             flip.performFlip(false, -1);
         }
         direction = initialDirectionSO.direction;
+        CanMove = true;
     }
     void Awake()
     {
@@ -61,7 +62,7 @@ public class EnemyLateralMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if(canMove)
+        if(CanMove)
         {
             rg.velocity = new Vector2(direction * lateralSpeedSO.speed, rg.velocity.y);
         }
@@ -90,8 +91,8 @@ public class EnemyLateralMovement : MonoBehaviour
     }
     IEnumerator StopMovement()
     {
-        canMove = false;
+        CanMove = false;
         yield return new WaitForSeconds(1f);
-        canMove = true;
+        CanMove = true;
     }
 }
