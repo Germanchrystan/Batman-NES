@@ -18,7 +18,11 @@ public class CheckSurrounding : MonoBehaviour
     public bool frontGroundCheck;
 
     [SerializeField] private UnityEvent NotGroundedEvent;
-    private bool isGrounded;
+    [SerializeField] private UnityEvent GroundedEvent;
+
+    [SerializeField] private UnityEvent FacingWallEvent;
+    public bool isGrounded;
+    private bool isFacingWall;
 
     void Awake()
     {
@@ -35,6 +39,20 @@ public class CheckSurrounding : MonoBehaviour
         if(isGrounded && !newIsGrounded)
         {
             NotGroundedEvent.Invoke();
+            isGrounded = newIsGrounded;
+        }
+        else if (!isGrounded && newIsGrounded)
+        {
+            GroundedEvent.Invoke();
+            isGrounded = newIsGrounded;
+        }
+    }
+    public void FacingWallCheck()
+    {
+        bool isFacingWall = Physics2D.OverlapCircle(frontCheck.position, groundCheckRadius, groundLayer);
+        if(isFacingWall)
+        {
+            FacingWallEvent.Invoke();
         }
     }
     public bool ShouldFlip(bool facingLeft)

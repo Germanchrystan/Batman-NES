@@ -290,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.600887, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.370958, y: 58.921104, z: 141.2513}
+  m_LocalPosition: {x: -18.20896, y: 59.03961, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -799,6 +799,9 @@ GameObject:
   - component: {fileID: 723295400}
   - component: {fileID: 723295399}
   - component: {fileID: 723295398}
+  - component: {fileID: 723295403}
+  - component: {fileID: 723295402}
+  - component: {fileID: 723295401}
   m_Layer: 0
   m_Name: Jader
   m_TagString: Untagged
@@ -932,6 +935,103 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e355daf663c4a74eb8747add32e9f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheckRadius: 0
+--- !u!114 &723295401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f69441b1db9ed341afd29ea3a764a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontCheck: {fileID: 1362425377}
+  groundCheck: {fileID: 1872729730}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  frontGroundCheck: 0
+  NotGroundedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 723295402}
+        m_TargetAssemblyTypeName: JumpingPatrolling, Assembly-CSharp
+        m_MethodName: set_CanJump
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  GroundedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 723295402}
+        m_TargetAssemblyTypeName: JumpingPatrolling, Assembly-CSharp
+        m_MethodName: set_CanJump
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  FacingWallEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 723295403}
+        m_TargetAssemblyTypeName: Flip, Assembly-CSharp
+        m_MethodName: flipCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &723295402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e355daf663c4a74eb8747add32e9f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheckRadius: 0
+--- !u!114 &723295403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3a45b14ad091c408f9eb81caa26373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &921568160 stripped
