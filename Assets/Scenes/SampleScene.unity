@@ -290,7 +290,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.600887, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.20896, y: 59.03961, z: 141.2513}
+  m_LocalPosition: {x: 12.370958, y: 58.921104, z: 141.2513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShakedownSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8961166605345358059, guid: 6d6c3ca1bddff5c44a64d62d920295a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6c3ca1bddff5c44a64d62d920295a4, type: 3}
 --- !u!114 &722972244
@@ -802,6 +806,9 @@ GameObject:
   - component: {fileID: 723295403}
   - component: {fileID: 723295402}
   - component: {fileID: 723295401}
+  - component: {fileID: 723295404}
+  - component: {fileID: 723295406}
+  - component: {fileID: 723295405}
   m_Layer: 0
   m_Name: Jader
   m_TagString: Untagged
@@ -919,7 +926,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -937,11 +944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e355daf663c4a74eb8747add32e9f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundCheckRadius: 0
+  jumpForce: 100
 --- !u!114 &723295401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,10 +966,10 @@ MonoBehaviour:
   NotGroundedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723295402}
-        m_TargetAssemblyTypeName: JumpingPatrolling, Assembly-CSharp
-        m_MethodName: set_CanJump
-        m_Mode: 6
+      - m_Target: {fileID: 723295404}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: DeactivateTimer
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -978,10 +981,22 @@ MonoBehaviour:
   GroundedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723295402}
-        m_TargetAssemblyTypeName: JumpingPatrolling, Assembly-CSharp
-        m_MethodName: set_CanJump
-        m_Mode: 6
+      - m_Target: {fileID: 723295404}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: ActivateTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 723295406}
+        m_TargetAssemblyTypeName: JumpPatrolAnimation, Assembly-CSharp
+        m_MethodName: PlayIdleAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1005,6 +1020,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  isGrounded: 0
 --- !u!114 &723295402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,11 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e355daf663c4a74eb8747add32e9f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  groundCheckRadius: 0
+  jumpForce: 150
 --- !u!114 &723295403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1044,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac3a45b14ad091c408f9eb81caa26373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &723295404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca5d644fb26b1042934dcb4f2d611e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerDurationSO: {fileID: 11400000, guid: 25b43e309d81b004aa9f43e3d3300587, type: 2}
+  TimesUpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 723295402}
+        m_TargetAssemblyTypeName: JumpingPatrolling, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 723295406}
+        m_TargetAssemblyTypeName: JumpPatrolAnimation, Assembly-CSharp
+        m_MethodName: PlayJumpAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!95 &723295405
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26e5ea2e571bcca4a836b04a89e4ef99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &723295406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723295395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed2b44ab516a7349b97cb254554439a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &921568160 stripped
@@ -5096,7 +5180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872729729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

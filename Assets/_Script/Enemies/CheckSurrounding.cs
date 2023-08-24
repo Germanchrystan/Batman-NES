@@ -35,6 +35,7 @@ public class CheckSurrounding : MonoBehaviour
     } 
     public void IsGroundedCheck()
     {
+        // TODO: use raycast pointing down
         bool newIsGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         if(isGrounded && !newIsGrounded)
         {

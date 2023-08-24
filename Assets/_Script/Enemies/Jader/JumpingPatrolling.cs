@@ -9,6 +9,7 @@ public class JumpingPatrolling : MonoBehaviour
 	//------------------------------------------//
     private Rigidbody2D rg;
     private Animator animator;
+    public float jumpForce = 300f;
     
     private int _jumpDirection = 0;
 	public int JumpDirection { get => _jumpDirection; set => _jumpDirection = value; }
@@ -24,15 +25,9 @@ public class JumpingPatrolling : MonoBehaviour
 	}
     void Update()
     {
-        // if(CanJump)
-        // {
-        //     Jump();
-        //     CanJump = false;
-        // }
     }
     public void Jump()
     {
-        Debug.Log("JUMP");
-        rg.AddForce(Vector2.up * 100, ForceMode2D.Impulse);
+        rg.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 }
