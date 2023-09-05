@@ -10,7 +10,6 @@ public class DetectPlayer : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("FOUND");
             PlayerFound.Invoke(collision.gameObject);
         }
     }

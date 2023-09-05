@@ -3,4 +3,4 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class GameObjectEvent : UnityEngine.Events.UnityEvent<GameObject> {} // Leave it empty
+public class GameObjectEvent : UnityEngine.Events.UnityEvent<GameObject> {}
