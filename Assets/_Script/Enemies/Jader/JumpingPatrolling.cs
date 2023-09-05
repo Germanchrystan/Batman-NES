@@ -18,16 +18,23 @@ public class JumpingPatrolling : MonoBehaviour
     public bool CanJump { get => _canJump; set => _canJump = value; }
 
     private Vector2 jumpVector;
+    private GameObject _foundPlayer;
+    public GameObject FoundPlayer{ get => _foundPlayer; set => _foundPlayer = value; }
     void Awake() 
 	{
     	rg=GetComponent<Rigidbody2D>();
 	    animator=GetComponent<Animator>();
 	}
-    void Update()
-    {
-    }
+
+    void Update() {}
+
     public void Jump()
     {
         rg.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void SetFoundPlayer(GameObject found)
+    {
+        FoundPlayer = found;
     }
 }
