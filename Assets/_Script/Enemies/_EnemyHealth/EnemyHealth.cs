@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
     private bool canGetHit = true;
     public float invisibilityInterval = 0.5f;
     public int currentHealth = 3;
-
+    [SerializeField] private EnemyHealthSO healthSO;
     [SerializeField] private UnityEvent triggerDamageEvent;
     [SerializeField] private UnityEvent triggerDeathEvent;
 
@@ -26,11 +26,17 @@ public class EnemyHealth : MonoBehaviour
         enemyHitBox = GetComponent<EnemyHitBox>();
         normalColor = renderer.color;
     }
-
+    void Start()
+    {
+        if(healthSO != null)
+        {
+            currentHealth = healthSO.healthPoints;
+        }
+    }
     void OnEnable()
     {
         canGetHit = true;
-        currentHealth = 3;
+        currentHealth = healthSO != null ? healthSO.healthPoints : 3;
         enemyHitBox.ActivateHitBoxes();
     }
 

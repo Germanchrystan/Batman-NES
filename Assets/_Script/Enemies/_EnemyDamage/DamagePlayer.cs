@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    public int damageAmount = 1;
+    private int damageAmount = 1;
+    [SerializeField] EnemyDamageAmountSO enemyDamageAmountSO;
+
+    void Start()
+    {
+        if(enemyDamageAmountSO != null)
+        {
+            damageAmount = enemyDamageAmountSO.damageAmount;
+        }
+    }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
